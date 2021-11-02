@@ -1,6 +1,7 @@
 import Login from "./components/Login"
 import Register from "./components/Register";
 import {BrowserRouter,Switch,Route} from "react-router-dom"
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
                     <Register/>
                 </Route>
                 <Route path="/dashboard">
-
+                    <Dashboard/>
                 </Route>
             </Switch>
         </BrowserRouter>

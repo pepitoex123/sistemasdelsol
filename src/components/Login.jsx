@@ -38,6 +38,7 @@ const Login = () => {
                 <input type="password" className="login_form_input" name="password" id="password" placeholder="Password" onChange={(e) => onChange(e) }/>
                 <span className="login_form_link">Do you not have an account? <Link to="/register"><a>Register Now</a></Link></span>
                 <input type="submit" value="Login" className="login_form_submit"/>
+                <Link to="/dashboard">dashboard previsory link</Link>
             </form>
         </section>
     )
