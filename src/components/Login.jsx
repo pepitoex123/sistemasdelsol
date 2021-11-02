@@ -13,6 +13,7 @@ const Login = () => {
                 <BiKey/>
                 <label htmlFor="password">Password</label>
                 <input type="password" className="login_form_input" name="password" id="password" placeholder="Password"/>
+                <span className="login_form_link">Do you not have an account? <a>Register Now</a></span>
                 <input type="submit" value="Login" className="login_form_submit"/>
             </form>
         </section>
