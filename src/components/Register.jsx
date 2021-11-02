@@ -28,7 +28,7 @@ const Register = () => {
         <section className="register">
             <img src={Logo} className="register_image" alt="Drogueria Del Sol"/>
             <h1 className="register_title">Register</h1>
-            <form className="register_form">
+            <form className="register_form" onSubmit={onSubmit}>
                 <BiUser/>
                 <label htmlFor="email">Email</label>
                 <input type="email" className="register_form_input" name="email" id="email" placeholder="Email" onChange={(e) => onChange(e) }/>
