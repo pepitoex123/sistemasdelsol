@@ -1,5 +1,6 @@
 import { FcSearch } from "react-icons/fc";
 import SearchBar from "./SearchBar";
+import ProductTable from "./ProductTable";
 
 
 const Store = () => {
@@ -10,6 +11,7 @@ const Store = () => {
                 <h1>Search</h1>
             </div>
             <SearchBar/>
+            <ProductTable/>
         </section>
     )
 }
