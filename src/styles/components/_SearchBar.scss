@@ -1,0 +1,42 @@
+.searchbar{
+  margin-top: 20px;
+
+  &_form{
+    display: flex;
+    margin-left: 20px;
+
+    &_input{
+      padding: 16px;
+
+      transition: border 0.3s;
+
+      &:hover{
+        border: 2px solid $colorPrincipal;
+      }
+    }
+
+    &_span{
+      margin-left: 50px;
+      align-self: center;
+      transition: border-bottom 0.2s;
+
+      &:hover{
+        cursor: pointer;
+        border-bottom: 2px solid $colorPrincipal;
+      }
+    }
+
+    &_advanced{
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      margin-left: 10%;
+
+
+    }
+
+    &_submit{
+
+    }
+  }
+}
