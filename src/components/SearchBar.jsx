@@ -1,29 +1,6 @@
 import {useState} from "react";
 
-const SearchBar = () => {
-
-    const [input,setInput] = useState({
-        search: "",
-        filter: "name"
-    });
-
-    const [showAdvanced,setShowAdvanced] = useState(false);
-
-    const onChange = (e) => {
-        setInput({
-            ...input,
-            [e.target.name]: e.target.value
-        })
-    }
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        console.log(input);
-    }
-
-    const onClick = (e) => {
-        setShowAdvanced(!showAdvanced);
-    }
+const SearchBar = ({onChange,onSubmit,onClick,input,showAdvanced}) => {
 
 
 
