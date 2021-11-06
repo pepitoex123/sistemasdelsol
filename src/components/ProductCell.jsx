@@ -1,10 +1,10 @@
 
 
-const ProductCell = ({productTitle,company,id,stock,price,priceDiscount,dto}) => {
+const ProductCell = ({name,company,id,stock,price,priceDiscount,dto}) => {
     return(
         <>
             <tr>
-                <th scope="row">{productTitle}</th>
+                <th scope="row">{name}</th>
                 <td data-title="Company">{company}</td>
                 <td data-title="ID">{id}</td>
                 <td data-title="Stock">{stock}</td>

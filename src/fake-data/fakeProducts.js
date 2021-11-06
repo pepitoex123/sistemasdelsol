@@ -1,6 +1,6 @@
 export const products = [
     {
-        productTitle: "Medicine 1",
+        name: "Medicine 1",
         company: "Los Esteros",
         id: 313131,
         stock: 3,
@@ -9,7 +9,7 @@ export const products = [
         dto: 40
     },
     {
-        productTitle: "Acnoxin",
+        name: "Acnoxin",
         company: "Sinopharma",
         id: 424242,
         stock: 10,
@@ -18,7 +18,7 @@ export const products = [
         dto: 400
     },
     {
-        productTitle: "Agua Micelar",
+        name: "Agua Micelar",
         company: "Especial Pharma",
         id: 15151,
         stock: 15,

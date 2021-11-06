@@ -28,11 +28,11 @@ const Login = () => {
     return(
         <section className="login">
             <img src={Logo} className="login_image" alt="Drogueria Del Sol"/>
-            <h1 className="login_title">Login</h1>
+            <h1 className="login_title">Iniciar Sesión</h1>
             <form className="login_form" onSubmit={onSubmit}>
                 <BiUser/>
                 <label htmlFor="email">Email</label>
-                <input type="email" className="login_form_input" name="email" id="email" placeholder="Email" onChange={(e) => onChange(e) }/>
+                <input type="email" className="login_form_input" name="email" id="email" placeholder="Email" onChange={(e) => onChange(e)}/>
                 <BiKey/>
                 <label htmlFor="password">Password</label>
                 <input type="password" className="login_form_input" name="password" id="password" placeholder="Password" onChange={(e) => onChange(e) }/>

@@ -2,12 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5%;
   height: 100vh;
 
   &_image{
-    width: 100px;
-    height: 100px;
+    width: 246px;
+    height: 255px;
   }
 
   &_title{
@@ -63,5 +62,4 @@
       }
     }
   }
-
 }

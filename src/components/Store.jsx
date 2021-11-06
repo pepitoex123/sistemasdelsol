@@ -36,7 +36,7 @@ const Store = () => {
                 <h1>Search</h1>
             </div>
             <SearchBar onSubmit={onSubmit} onChange={onChange} onClick={onClick} input={input} showAdvanced={showAdvanced}/>
-            <ProductTable/>
+            <ProductTable input={input}/>
         </section>
     )
 }

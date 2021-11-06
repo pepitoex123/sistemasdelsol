@@ -2,7 +2,9 @@ import ProductCell from "./ProductCell";
 import {products} from "../fake-data/fakeProducts";
 
 
-const ProductTable = () => {
+const ProductTable = ({input}) => {
+
+
     return(
         <section>
             <div className="container">
@@ -21,7 +23,9 @@ const ProductTable = () => {
                     </thead>
                     <tbody>
                     {
-                        products.map((product) => (
+                        input.search ? products.filter((product) => product[input.filter].includes(input.search)).map((product) => (
+                            <ProductCell key={product.id} {...product} />
+                        )) : products.map((product) => (
                             <ProductCell key={product.id} {...product} />
                         ))
                     }
