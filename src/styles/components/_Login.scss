@@ -19,6 +19,19 @@
     flex-direction: column;
     font-weight: 500;
 
+    &_placeholder{
+      opacity: 0.4;
+      display: flex;
+      transform: translateY(40px) translateX(10px);
+      pointer-events: none;
+      transition: opacity 0.5s;
+
+      &.login_form_placeholder_password svg {
+        align-self: flex-end;
+      }
+    }
+
+
     &_input{
       margin-top: 10px;
       margin-bottom: 10px;
@@ -35,12 +48,11 @@
       font-size: 10px;
 
       & a{
-        color: $colorPrincipal;
-
-        transition: border-bottom 0.4s;
-
+        margin-left: 2px;
+        color: inherit;
+        text-decoration: inherit;
         &:hover{
-          border-bottom: 2px solid #fa7d21;
+          font-weight: bold;
         }
       }
     }
@@ -53,7 +65,6 @@
       font-size: 20px;
       font-weight: 600;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-      border-radius: 54px;
       transition: border 0.4s, transform 0.2s;
 
       &:hover{
@@ -62,4 +73,19 @@
       }
     }
   }
+}
+
+
+// Adding dynamic event
+
+.login_form_placeholder_active {
+  transform: translateY(40px) translateX(-60px) !important;
+  opacity: 1;
+  transition: opacity 0.5s !important;
+}
+
+.login_form_placeholder_active_password {
+  transform: translateY(40px) translateX(-100px) !important;
+  opacity: 1;
+  transition: opacity 0.5s !important;
 }

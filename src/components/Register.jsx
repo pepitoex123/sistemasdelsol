@@ -1,9 +1,13 @@
 import Logo from "./../media/logo.png";
 import {BiUser,BiKey} from "react-icons/bi";
 import {Link} from "react-router-dom";
-import {useState} from "react";
+import {useState,useRef} from "react";
 
 const Register = () => {
+
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
+    const confirmPasswordRef = useRef(null);
 
     const [inputs,setInputs] = useState({
         email: "",
@@ -12,6 +16,32 @@ const Register = () => {
     })
 
     const onChange = (e) => {
+
+        if(e.target.name === "email" && !(e.target.value.length === 0)){
+            emailRef.current.classList.add("register_form_placeholder_active");
+        }
+
+        if(e.target.name === "email" && e.target.value.length === 0){
+            emailRef.current.classList.remove("register_form_placeholder_active");
+        }
+
+        if(e.target.name === "password" && !(e.target.value.length === 0)){
+            passwordRef.current.classList.add("register_form_placeholder_active_password");
+        }
+
+        if(e.target.name === "password" && e.target.value.length === 0){
+            passwordRef.current.classList.remove("register_form_placeholder_active_password");
+        }
+
+        if(e.target.name === "confirmPassword" && !(e.target.value.length === 0)){
+            confirmPasswordRef.current.classList.add("register_form_placeholder_active_confirmpassword");
+        }
+
+        if(e.target.name === "confirmPassword" && e.target.value.length === 0){
+            confirmPasswordRef.current.classList.remove("register_form_placeholder_active_confirmpassword");
+        }
+
+
         setInputs({
             ...inputs,
             [e.target.name]: e.target.value
@@ -27,19 +57,25 @@ const Register = () => {
     return(
         <section className="register">
             <img src={Logo} className="register_image" alt="Drogueria Del Sol"/>
-            <h1 className="register_title">Register</h1>
+            <h1 className="register_title">Registrarse</h1>
             <form className="register_form" onSubmit={onSubmit}>
-                <BiUser/>
-                <label htmlFor="email">Email</label>
-                <input type="email" className="register_form_input" name="email" id="email" placeholder="Email" onChange={(e) => onChange(e) }/>
-                <BiKey/>
-                <label htmlFor="password">Password</label>
-                <input type="password" className="register_form_input" name="password" id="password" placeholder="Password" onChange={(e) => onChange(e) }/>
-                <BiKey/>
-                <label htmlFor="confirmPassword">Confirm Password</label>
-                <input type="password" className="register_form_input" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" onChange={(e) => onChange(e) }/>
-                <span className="register_form_link">Do you already have an account? <Link to="/login"><a>Login Now</a></Link></span>
-                <input type="submit" value="Register" className="register_form_submit"/>
+                <div className="register_form_placeholder" ref={emailRef}>
+                    <label htmlFor="email">Email</label>
+                    <BiUser/>
+                </div>
+                <input type="email" className="register_form_input" name="email" id="email" onChange={(e) => onChange(e) } autocomplete="off"/>
+                <div className="register_form_placeholder register_form_placeholder_password" ref={passwordRef} >
+                    <label htmlFor="password">Contraseña</label>
+                    <BiKey/>
+                </div>
+                <input type="password" className="register_form_input" name="password" id="password" onChange={(e) => onChange(e) }/>
+                <div className="register_form_placeholder register_form_placeholder_password" ref={confirmPasswordRef}>
+                    <label htmlFor="confirmPassword">Confirmar contraseña</label>
+                    <BiKey/>
+                </div>
+                <input type="password" className="register_form_input" name="confirmPassword" id="confirmPassword" onChange={(e) => onChange(e) }/>
+                <span className="register_form_link">¿Ya tienes una cuenta?<Link to="/login"><a>Inicia Sesión</a></Link></span>
+                <input type="submit" value="Registrarse" className="register_form_submit"/>
             </form>
         </section>
     )
