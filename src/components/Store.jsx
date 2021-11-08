@@ -31,11 +31,8 @@ const Store = () => {
 
     return(
         <section className="store">
-            <div className="store_title">
-                <FcSearch/>
-                <h1>Search</h1>
-            </div>
             <SearchBar onSubmit={onSubmit} onChange={onChange} onClick={onClick} input={input} showAdvanced={showAdvanced}/>
+            <hr/>
             <ProductTable input={input}/>
         </section>
     )

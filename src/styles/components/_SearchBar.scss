@@ -28,11 +28,15 @@
 
     &_advanced{
       display: flex;
-      flex-direction: column;
       align-self: center;
       margin-left: 10%;
 
-
+      & input {
+        transform: translateY(4px);
+      }
+      & label {
+        padding: 0px 10px;
+      }
     }
 
     &_submit{
