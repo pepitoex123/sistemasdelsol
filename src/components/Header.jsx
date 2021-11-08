@@ -9,9 +9,9 @@ const Header = () => {
             <img src={Logo} alt="Droguería Sistemas Del Sol" className="header_logo"/>
             <nav>
                 <ul>
-                    <li><BiCart/>Cart</li>
-                    <li><BiUserCircle/>Account</li>
-                    <Link to="/dashboard/store" style={{ color: 'inherit', textDecoration: 'inherit'}}><li><BiStore/>Store</li></Link>
+                    <Link to="/dashboard/store" style={{ color: 'inherit', textDecoration: 'inherit'}}><li><BiStore/>Productos</li></Link>
+                    <li><BiCart/>Carrito</li>
+                    <li><BiUserCircle/>Cuenta</li>
                 </ul>
             </nav>
         </header>
