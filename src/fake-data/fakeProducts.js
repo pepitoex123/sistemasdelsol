@@ -8,7 +8,8 @@ export const products = [
         priceDiscount: 1000,
         dto: 40,
         id: 1,
-        precioConDescuento: 200
+        precioConDescuento: 200,
+        image: "https://via.placeholder.com/600"
     },
     {
         nombreComercial: "Acnoxin",
@@ -19,7 +20,8 @@ export const products = [
         priceDiscount: 700,
         dto: 400,
         id: 2,
-        precioConDescuento: 200
+        precioConDescuento: 200,
+        image: "https://via.placeholder.com/600"
     },
     {
         nombreComercial: "Agua Micelar",
@@ -31,5 +33,6 @@ export const products = [
         dto: 200,
         id: 3,
         precioConDescuento: 2000,
+        image: "https://via.placeholder.com/600"
     }
 ]

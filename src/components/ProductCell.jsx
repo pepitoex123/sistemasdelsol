@@ -4,10 +4,15 @@ import {ReactComponent as CheckSvg} from "./../media/svg/check.svg";
 import {ReactComponent as CancelSvg} from "./../media/svg/cancel.svg";
 import {useState} from "react";
 import HoverText from "./HoverText";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
-const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDiscount,dto,precioConDescuento}) => {
+const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDiscount,dto,precioConDescuento,image}) => {
 
     const [isHovering,setIsHovering] = useState(false);
+
+    const [show,setShow] = useState(false);
 
     const handleMouseOver = () => {
         setIsHovering(true);
@@ -20,6 +25,16 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
 
     return(
         <>
+            <Modal open={show} onClose={() => setShow(false)} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" >
+                <Box>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                        Text in a modal
+                    </Typography>
+                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                    </Typography>
+                </Box>
+            </Modal>
             <tr className="product">
                 <td data-title="Cantidad">
                     <div className="product_quantity">
@@ -32,7 +47,7 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
                         </button>
                     </div>
                 </td>
-                <th scope="row">{nombreComercial}</th>
+                <th scope="row" onClick={() => setShow(true)}>{nombreComercial}</th>
                 <td data-title="Laboratorio">{laboratorio}</td>
                 <td data-title="Monodroga">{monodroga}</td>
                 <td data-title="Stock" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
