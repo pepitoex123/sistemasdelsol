@@ -7,16 +7,16 @@ import {useState} from "react";
 const Store = () => {
     const [input,setInput] = useState({
         search: "",
-        filter: "name"
+        filter: "nombre comercial"
     });
 
-    const [showAdvanced,setShowAdvanced] = useState(false);
 
     const onChange = (e) => {
         setInput({
             ...input,
             [e.target.name]: e.target.value
         })
+        console.log(input)
     }
 
     const onSubmit = (e) => {
@@ -25,13 +25,13 @@ const Store = () => {
     }
 
     const onClick = (e) => {
-        setShowAdvanced(!showAdvanced);
+
     }
 
 
     return(
         <section className="store">
-            <SearchBar onSubmit={onSubmit} onChange={onChange} onClick={onClick} input={input} showAdvanced={showAdvanced}/>
+            <SearchBar onSubmit={onSubmit} onChange={onChange} onClick={onClick} input={input} />
             <hr/>
             <ProductTable input={input}/>
         </section>

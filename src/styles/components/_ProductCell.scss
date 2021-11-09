@@ -1,0 +1,54 @@
+.product {
+
+  &_quantity{
+    display: flex;
+    justify-content: center;
+
+    & input {
+      width: 25%;
+      text-align: center;
+    }
+
+    &_cancel svg {
+      fill: red;
+    }
+    &_pending svg{
+      fill: yellow;
+    }
+    &_check svg{
+      fill: limegreen;
+    }
+  }
+}
+
+@media screen and (max-width: 770px){
+  .product{
+    & td[data-title="Cantidad"]{
+      display: flex;
+      align-items: center;
+    }
+    &_quantity{
+      justify-content: flex-end;
+      width: 100%;
+
+      &_cancel svg {
+        width: 40px;
+        height: 20px;
+      }
+      &_pending svg{
+        width: 40px;
+        height: 20px;
+      }
+      &_check svg{
+        width: 40px;
+        height: 20px;
+      }
+    }
+
+    & td:nth-of-type(4):before{
+      
+    }
+
+
+  }
+}
