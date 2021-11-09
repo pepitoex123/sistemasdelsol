@@ -9,14 +9,36 @@
       text-align: center;
     }
 
+    &_cancel{
+      position: relative;
+    }
+
+    &_pending{
+      position: relative;
+    }
+
+    &_check{
+      position: relative;
+    }
+
     &_cancel svg {
       fill: red;
+      &:hover{
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>❓</text></svg>"),default;
+      }
     }
+
     &_pending svg{
       fill: yellow;
+      &:hover{
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>❓</text></svg>"),default;
+      }
     }
     &_check svg{
       fill: limegreen;
+      &:hover{
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>❓</text></svg>"),default;
+      }
     }
   }
 }
@@ -46,7 +68,7 @@
     }
 
     & td:nth-of-type(4):before{
-      
+
     }
 
 

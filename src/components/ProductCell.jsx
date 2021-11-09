@@ -2,8 +2,22 @@ import {ReactComponent as PlusSvg} from "./../media/svg/plus.svg";
 import {ReactComponent as MinusSvg} from "./../media/svg/minus.svg";
 import {ReactComponent as CheckSvg} from "./../media/svg/check.svg";
 import {ReactComponent as CancelSvg} from "./../media/svg/cancel.svg";
+import {useState} from "react";
+import HoverText from "./HoverText";
 
 const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDiscount,dto,precioConDescuento}) => {
+
+    const [isHovering,setIsHovering] = useState(false);
+
+    const handleMouseOver = () => {
+        setIsHovering(true);
+    };
+
+    const handleMouseOut = () => {
+        setIsHovering(false);
+    };
+
+
     return(
         <>
             <tr className="product">
@@ -21,10 +35,11 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
                 <th scope="row">{nombreComercial}</th>
                 <td data-title="Laboratorio">{laboratorio}</td>
                 <td data-title="Monodroga">{monodroga}</td>
-                <td data-title="Stock">
-                    {stock === -1 && (<div className="product_quantity_cancel"><CancelSvg/></div>)}
-                    {stock === 0 && (<div className="product_quantity_pending"><CheckSvg/></div>)}
-                    {stock === 1 && (<div className="product_quantity_check"><CheckSvg/></div>)}
+                <td data-title="Stock" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+
+                    {stock === -1 && (<div className="product_quantity_cancel">{isHovering && (<HoverText text={"El producto no tiene stock!"} stockState={"#EA3C53"}/>)}<CancelSvg/></div>)}
+                    {stock === 0 && (<div className="product_quantity_pending">{isHovering && (<HoverText text={"El producto tendrá stock en poco tiempo!"} stockState={"#FFC30B"}/>)}<CheckSvg/></div>)}
+                    {stock === 1 && (<div className="product_quantity_check">{isHovering && (<HoverText text={"El producto tiene stock!"} stockState={"green"}/>)}<CheckSvg/></div>)}
                 </td>
                 <td data-title="Descuento Público" data-type="currency">${price}</td>
                 <td data-title="Su Descuento" data-type="currency">${priceDiscount}</td>
