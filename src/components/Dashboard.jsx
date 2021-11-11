@@ -4,6 +4,8 @@ import Store from "./Store";
 
 
 const Dashboard = () => {
+
+
     return(
         <div className="dashboard">
             <Header/>
