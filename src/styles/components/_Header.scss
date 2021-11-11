@@ -37,6 +37,9 @@
 
   &_nav_mobile {
     display: none;
+    &_body{
+      display: none;
+    }
   }
 
   & nav{
@@ -80,6 +83,20 @@
         width: 30px;
         height: 30px;
         cursor: pointer;
+      }
+      &_body {
+        height: 100vh;
+        width: 98vw;
+        margin: 0;
+        background-color: red;
+        transform: translateY(20px) translateX(-9999px);
+        z-index: 20;
+        position: fixed;
+        transition: translateX 0.9s;
+
+        &_active{
+          transform: translateX(9999px) !important;
+        }
       }
     }
   }

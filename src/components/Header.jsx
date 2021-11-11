@@ -1,12 +1,14 @@
 import Logo from "./../media/headerlogo.png";
-import {BiUserCircle,BiStore,BiCart,BiHome} from "react-icons/bi";
+import {BiUserCircle,BiStore,BiCart,BiHome,BiX} from "react-icons/bi";
 import {Link} from "react-router-dom";
-import {useEffect, useRef} from "react";
-import {GiHamburgerMenu} from "react-icons/gi";
+import {useEffect, useRef,useState} from "react";
+import {GiHamburgerMenu,GiCancel} from "react-icons/gi";
 
 
 const Header = () => {
     const headerRef = useRef(null);
+
+    const [isMobileNavbarOn, setIsMobileNavbarOn] = useState(false);
 
     useEffect(() =>{
         window.addEventListener("scroll",() =>{
@@ -24,20 +26,29 @@ const Header = () => {
 
 
     return(
-        <header ref={headerRef} className="header">
-            <img src={Logo} alt="Droguería Sistemas Del Sol" className="header_logo"/>
-            <nav>
-                <ul>
-                    <Link to="/dashboard" style={{color: 'inherit', textDecoration: 'inherit'}}><li><BiHome/>Inicio</li></Link>
-                    <Link to="/dashboard/store" style={{ color: 'inherit', textDecoration: 'inherit'}}><li><BiStore/>Productos</li></Link>
-                    <li><BiCart/>Carrito</li>
-                    <li><BiUserCircle/>Cuenta</li>
-                    <span className="header_nav_mobile">
-                        <GiHamburgerMenu/>
-                    </span>
-                </ul>
-            </nav>
-        </header>
+        <>
+            <header ref={headerRef} className="header">
+                <img src={Logo} alt="Droguería Sistemas Del Sol" className="header_logo"/>
+                <nav>
+                    <ul>
+                        <Link to="/dashboard" style={{color: 'inherit', textDecoration: 'inherit'}}><li><BiHome/>Inicio</li></Link>
+                        <Link to="/dashboard/store" style={{ color: 'inherit', textDecoration: 'inherit'}}><li><BiStore/>Productos</li></Link>
+                        <li><BiCart/>Carrito</li>
+                        <li><BiUserCircle/>Cuenta</li>
+                        <span className="header_nav_mobile" onClick={() => setIsMobileNavbarOn(!isMobileNavbarOn)}>
+                            {
+                                isMobileNavbarOn ? <GiCancel/> : <GiHamburgerMenu/>
+                            }
+                        </span>
+                    </ul>
+                </nav>
+            </header>
+            <div className={`header_nav_mobile_body ${isMobileNavbarOn ? 'header_nav_mobile_body_active' : ''}`}>
+                <h1>
+                    Navbar mobile
+                </h1>
+            </div>
+        </>
     )
 }
 
