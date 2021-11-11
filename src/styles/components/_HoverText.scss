@@ -13,3 +13,13 @@
   font: 400 .9em 'Open Sans', sans-serif;
   border-radius: 10px;
 }
+
+
+@media screen and (max-width: 770px){
+  .hovertext {
+    display: none;
+  }
+  .message {
+    display: none;
+  }
+}

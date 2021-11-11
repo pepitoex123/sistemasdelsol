@@ -4,9 +4,6 @@ import {ReactComponent as CheckSvg} from "./../media/svg/check.svg";
 import {ReactComponent as CancelSvg} from "./../media/svg/cancel.svg";
 import {useState} from "react";
 import HoverText from "./HoverText";
-import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import AnimatedModal from "./AnimatedModal";
 
 const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDiscount,dto,precioConDescuento,image}) => {

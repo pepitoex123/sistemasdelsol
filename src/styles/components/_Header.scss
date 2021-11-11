@@ -40,3 +40,21 @@
   }
 
 }
+
+
+@media screen and (max-width: 770px){
+  .header {
+    &_logo {
+      width: 180px;
+    }
+
+    & ul {
+      margin-right: 0px;
+
+      & li {
+        padding: 0px 10px;
+        font-size: 16px;
+      }
+    }
+  }
+}

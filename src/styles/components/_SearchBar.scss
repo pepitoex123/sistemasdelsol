@@ -44,3 +44,23 @@
     }
   }
 }
+
+
+@media screen and (max-width: 770px){
+  .searchbar {
+    &_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+
+      &_advanced {
+        margin-left: 0;
+      }
+
+      &_submit {
+        padding: 10px;
+      }
+    }
+  }
+}
