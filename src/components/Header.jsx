@@ -9,13 +9,16 @@ const Header = () => {
     const headerRef = useRef(null);
 
     const [isMobileNavbarOn, setIsMobileNavbarOn] = useState(false);
+    const [isScrollOn,setIsScrollOn] = useState(false);
 
     useEffect(() =>{
         window.addEventListener("scroll",() =>{
             if(document.body.scrollTop > 10 || document.documentElement.scrollTop > 10){
                 headerRef.current.classList.add("header_is_fixed");
+                setIsScrollOn(true);
             }else{
                 headerRef.current.classList.remove("header_is_fixed");
+                setIsScrollOn(false);
             }
             return () =>{
                 window.removeEventListener("scroll");
@@ -43,7 +46,7 @@ const Header = () => {
                     </ul>
                 </nav>
             </header>
-            <div className={`header_nav_mobile_body ${isMobileNavbarOn ? 'header_nav_mobile_body_active' : ''}`}>
+            <div className={`header_nav_mobile_body ${isMobileNavbarOn ? 'header_nav_mobile_body_active' : ''} ${isScrollOn && isMobileNavbarOn ? 'header_nav_mobile_body_active_scroll' : ''}`}>
                 <h1>
                     Navbar mobile
                 </h1>
