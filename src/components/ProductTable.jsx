@@ -33,7 +33,7 @@ const ProductTable = ({input}) => {
                     </thead>
                     <tbody>
                     {
-                        input.search ? products.filter((product) => product[sanitizedInput].includes(input.search)).map((product) => (
+                        input.search ? products.filter((product) => product[sanitizedInput].toLowerCase().includes(input.search.toLowerCase())).map((product) => (
                             <ProductCell key={product.id} {...product} />
                         )) : products.map((product) => (
                             <ProductCell key={product.id} {...product} />
