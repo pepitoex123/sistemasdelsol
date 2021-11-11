@@ -85,18 +85,18 @@
         cursor: pointer;
       }
       &_body {
-        height: 100vh;
-        width: 98vw;
+        height: 100%;
+        width: 100%;
         margin: 0;
         background-color: rgba(255, 0, 0, 0.27);
         transform: translateX(-9999px);
         z-index: 20;
         position: fixed;
-        display: block !important;
+        display: block;
         transition: translateX 2s;
 
         &_active{
-          transform: translateX(0px) translateY(25px) !important;
+          transform: translateX(0px);
         }
       }
     }
