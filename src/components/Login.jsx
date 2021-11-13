@@ -5,6 +5,8 @@ import {useState,useRef} from "react";
 
 const Login = () => {
 
+    // TODO : Vistas mobile
+
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
 
@@ -54,18 +56,19 @@ const Login = () => {
             <h1 className="login_title">Iniciar Sesión</h1>
             <form className="login_form" onSubmit={onSubmit}>
                 <div className="login_form_placeholder" ref={emailRef} >
-                    <label htmlFor="email">Email</label>
                     <BiUser/>
+                    <label htmlFor="email">Email</label>
                 </div>
-                <input type="email" autocomplete="off" className="login_form_input" name="email" id="email" onChange={(e) => onChange(e)}/>
+                <input type="email" autoComplete="off" className="login_form_input" name="email" id="email" onChange={(e) => onChange(e)}/>
                 <div className="login_form_placeholder login_form_placeholder_password" ref={passwordRef}>
-                    <label htmlFor="password">Contraseña</label>
                     <BiKey/>
+                    <label htmlFor="password">Contraseña</label>
                 </div>
-                <input type="password" className="login_form_input" name="password" id="password" onChange={(e) => onChange(e) } autocomplete="off"/>
-                <span className="login_form_link">¿No tienes una cuenta?<Link to="/register"><a>Registrate Ahora</a></Link></span>
+                <input type="password" className="login_form_input" name="password" id="password" onChange={(e) => onChange(e) } autoComplete="off"/>
                 <input type="submit" value="Iniciar Sesión" className="login_form_submit"/>
-                <Link to="/dashboard">dashboard previsory link</Link>
+                <span className="login_form_link">¿Olvidaste tu contraseña?<Link to="/register">Hacé click acá</Link></span>
+                <span className="login_form_link">¿No tenés una cuenta?<Link to="/register">Registrate Ahora</Link></span>
+                <span className="login_dashboard"><Link to="/dashboard">dashboard previsory link</Link></span>
             </form>
         </section>
     )

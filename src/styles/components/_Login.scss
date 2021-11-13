@@ -1,3 +1,6 @@
+
+
+
 .login {
   display: flex;
   flex-direction: column;
@@ -5,13 +8,14 @@
   height: 100vh;
 
   &_image{
-    width: 246px;
-    height: 255px;
+    margin-top: 50px;
   }
 
   &_title{
-    font-weight: 600;
-    color: $colorPrincipal;
+    font-weight: 400;
+    color: #000;
+    font-size: 1.2rem;
+    margin: 30px 0px 0px 0px;
   }
 
   &_form{
@@ -20,58 +24,69 @@
     font-weight: 500;
 
     &_placeholder{
-      opacity: 0.4;
+      opacity: 0.5;
       display: flex;
-      transform: translateY(40px) translateX(10px);
+      transform: translateY(35px) translateX(10px);
       pointer-events: none;
-      transition: opacity 0.5s;
+      transition: all 0.5s;
 
       &.login_form_placeholder_password svg {
         align-self: flex-end;
+      }
+
+      & label{
+        padding-left: 5px;
+      }
+
+      & svg{
+        transform: scale(1.2);
       }
     }
 
 
     &_input{
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-top: 5px;
       padding: 10px;
 
-      transition: border 0.4s;
 
-      &:hover{
-        border: 2px solid #fa7d21;
-      }
     }
+
 
     &_link{
       font-size: 10px;
+      font-weight: 400;
 
+      margin: 5px 2px 5px 2px;
       & a{
-        margin-left: 2px;
         color: inherit;
         text-decoration: inherit;
         &:hover{
           font-weight: bold;
+          font-weight: 600;
         }
       }
     }
 
     &_submit{
-      margin-top: 10px;
+      margin: 10px 0px;
       padding: 10px;
       background-color: #FC8A17;
+      border: none;
       opacity: 0.9;
       font-size: 20px;
-      font-weight: 600;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-      transition: border 0.4s, transform 0.2s;
+      cursor: pointer;
+      font-weight: 400;
 
       &:hover{
-        border: 4px solid #fa7d21;
-        transform: translateY(-6px);
+        font-weight: 600;
       }
     }
+  }
+
+  &_dashboard{
+    position: absolute;
+    right: 5%;
+    top: 90vh;
   }
 }
 
@@ -79,13 +94,11 @@
 // Adding dynamic event
 
 .login_form_placeholder_active {
-  transform: translateY(40px) translateX(-60px) !important;
-  opacity: 1;
-  transition: opacity 0.5s !important;
+  transform: translateY(35px) translateX(-75px) !important;
+  transition: all 0.5s !important;
 }
 
 .login_form_placeholder_active_password {
-  transform: translateY(40px) translateX(-100px) !important;
-  opacity: 1;
-  transition: opacity 0.5s !important;
+  transform: translateY(35px) translateX(-120px) !important;
+  transition: all 0.5s !important;
 }
