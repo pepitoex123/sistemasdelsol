@@ -7,8 +7,10 @@ const SearchBar = ({onChange,onSubmit,onClick,input}) => {
     return(
         <div className="searchbar">
             <form className="searchbar_form" onSubmit={onSubmit}>
-                <input className="searchbar_form_input" name="search" type="text" placeholder={`Buscar por ${input.filter}`} onChange={onChange} />
-                <input className="searchbar_form_submit" value={"Buscar"} type="submit"/>
+                <div>
+                    <input className="searchbar_form_input" name="search" type="text" placeholder={`Buscar por ${input.filter}`} onChange={onChange} />
+                    <input className="searchbar_form_submit" value={"Buscar"} type="submit"/>
+                </div>
                 <div className="searchbar_form_advanced">
                     <input type="radio" name="filter" value="nombre comercial" onChange={onChange}/>
                     <label htmlFor="name">Nombre Comercial</label>

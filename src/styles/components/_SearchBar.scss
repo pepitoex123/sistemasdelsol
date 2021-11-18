@@ -32,7 +32,7 @@
       margin-left: 10%;
 
       & input {
-        transform: translateY(0px);
+
       }
       & label {
         padding: 0px 10px;
@@ -43,6 +43,9 @@
       background-color: $colorPrincipal;
       color: white;
       border: none;
+      padding: 13px;
+      padding-top: 15px;
+      transform: translateY(2px);
     }
   }
 }
@@ -58,11 +61,14 @@
 
 
       &_advanced {
-        margin-left: 0;
+        margin-left: 0px;
+        margin-top: 10px;
       }
 
       &_submit {
-        padding: 10px;
+        padding: 13px;
+        padding-top: 15px;
+        transform: translateY(2px);
         background-color: $colorPrincipal;
         color: white;
       }
