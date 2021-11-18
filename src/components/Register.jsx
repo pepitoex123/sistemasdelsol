@@ -60,18 +60,18 @@ const Register = () => {
             <h1 className="register_title">Registrarse</h1>
             <form className="register_form" onSubmit={onSubmit}>
                 <div className="register_form_placeholder" ref={emailRef}>
-                    <label htmlFor="email">Email</label>
                     <BiUser/>
+                    <label htmlFor="email">Email</label>
                 </div>
                 <input type="email" className="register_form_input" name="email" id="email" onChange={(e) => onChange(e) } autocomplete="off"/>
                 <div className="register_form_placeholder register_form_placeholder_password" ref={passwordRef} >
-                    <label htmlFor="password">Contraseña</label>
                     <BiKey/>
+                    <label htmlFor="password">Contraseña</label>
                 </div>
                 <input type="password" className="register_form_input" name="password" id="password" onChange={(e) => onChange(e) }/>
                 <div className="register_form_placeholder register_form_placeholder_password" ref={confirmPasswordRef}>
-                    <label htmlFor="confirmPassword">Confirmar contraseña</label>
                     <BiKey/>
+                    <label htmlFor="confirmPassword">Confirmar contraseña</label>
                 </div>
                 <input type="password" className="register_form_input" name="confirmPassword" id="confirmPassword" onChange={(e) => onChange(e) }/>
                 <span className="register_form_link">¿Ya tienes una cuenta?<Link to="/login"><a>Inicia Sesión</a></Link></span>

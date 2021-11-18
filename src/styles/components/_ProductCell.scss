@@ -4,6 +4,12 @@
     display: flex;
     justify-content: center;
 
+    & button{
+      background-color: transparent;
+      border: none;
+
+    }
+
     & input {
       width: 25%;
       text-align: center;

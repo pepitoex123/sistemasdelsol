@@ -3,15 +3,18 @@
   display: flex;
   flex-direction: row;
   transition: background-color 0.4s;
+  align-items: center;
+  background-color: $colorPrincipal;
+  height: 10vh;
 
 
   &_logo{
     width: 200px;
-    height: 50px;
+    height: inherit;
     transition: width 0.3s;
-    &:hover{
-      width: 210px;
-    }
+    cursor: pointer;
+    background-color: white;
+    padding-right: 20px;
   }
 
   & ul{
@@ -19,18 +22,20 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
-    margin-right: 60px;
+    align-items: baseline;
+    margin-right: 10px;
+    margin-top: 6vh;
+    color: white;
 
     & li {
       padding: 0px 20px;
 
       & svg {
-        transform: translateY(2px);
+        transform: translateY(2px) translateX(-5px) scale(1.2);
       }
 
       &:hover{
-        color: $colorPrincipal
+        text-decoration: underline;
       }
     }
   }
@@ -44,7 +49,6 @@
 
   & nav{
     width: 100%;
-    height: 100%;
   }
 
 }
@@ -61,6 +65,7 @@
 
 @media screen and (max-width: 770px){
   .header {
+    align-items: center;
     &_logo {
       width: 180px;
     }
@@ -78,7 +83,7 @@
     &_nav_mobile {
       display: block;
       margin-right: 30px;
-      transform: translateY(2px);
+      transform: translateY(-3px);
       & svg {
         width: 30px;
         height: 30px;
@@ -98,7 +103,7 @@
         &_active{
           transform: translateX(0px);
           &_scroll{
-            transform: translateX(0px) translateY(25px);
+            transform: translateX(0px) translateY(31px);
           }
         }
       }

@@ -8,6 +8,7 @@ textarea, select, input, button:focus {
 
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: 'Montserrat', Arial;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;

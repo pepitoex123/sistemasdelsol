@@ -8,10 +8,10 @@
     &_input{
       padding: 14px;
 
-      transition: border 0.3s;
+      border: solid 1px #686868;
+      font-size: 14px;
 
       &:hover{
-        border: 2px solid $colorPrincipal;
       }
     }
 
@@ -40,7 +40,9 @@
     }
 
     &_submit{
-
+      background-color: $colorPrincipal;
+      color: white;
+      border: none;
     }
   }
 }
@@ -54,12 +56,15 @@
       align-items: center;
       margin-left: 0;
 
+
       &_advanced {
         margin-left: 0;
       }
 
       &_submit {
         padding: 10px;
+        background-color: $colorPrincipal;
+        color: white;
       }
     }
   }

@@ -33,17 +33,19 @@ const Header = () => {
             <header ref={headerRef} className="header">
                 <img src={Logo} alt="Droguería Sistemas Del Sol" className="header_logo"/>
                 <nav>
-                    <ul>
-                        <Link to="/dashboard" style={{color: 'inherit', textDecoration: 'inherit'}}><li><BiHome/>Inicio</li></Link>
-                        <Link to="/dashboard/store" style={{ color: 'inherit', textDecoration: 'inherit'}}><li><BiStore/>Productos</li></Link>
-                        <li><BiCart/>Carrito</li>
-                        <li><BiUserCircle/>Cuenta</li>
-                        <span className="header_nav_mobile" onClick={() => setIsMobileNavbarOn(!isMobileNavbarOn)}>
+                    <div>
+                        <ul>
+                            <Link to="/dashboard" style={{color: 'inherit', textDecoration: 'inherit'}}><li><BiHome/>Inicio</li></Link>
+                            <Link to="/dashboard/store" style={{ color: 'inherit', textDecoration: 'inherit'}}><li><BiStore/>Productos</li></Link>
+                            <li><BiCart/>Carrito</li>
+                            <li><BiUserCircle/>Cuenta</li>
+                            <span className="header_nav_mobile" onClick={() => setIsMobileNavbarOn(!isMobileNavbarOn)}>
                             {
                                 isMobileNavbarOn ? <GiCancel/> : <GiHamburgerMenu/>
                             }
                         </span>
-                    </ul>
+                        </ul>
+                    </div>
                 </nav>
             </header>
             <div className={`header_nav_mobile_body ${isMobileNavbarOn ? 'header_nav_mobile_body_active' : ''} ${isScrollOn && isMobileNavbarOn ? 'header_nav_mobile_body_active_scroll' : ''}`}>

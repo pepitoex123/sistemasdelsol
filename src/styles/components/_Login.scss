@@ -102,3 +102,27 @@
   transform: translateY(35px) translateX(-120px) !important;
   transition: all 0.5s !important;
 }
+
+@media screen and (max-width: 650px){
+  .login {
+    &_form {
+      &_input {
+        margin: 10px 0px;
+      }
+      &_placeholder {
+        transform: translateY(40px) translateX(10px);
+      }
+    }
+  }
+
+  .login_form_placeholder_active {
+    transform: translateY(10px) translateX(10px) !important;
+    transition: all 0.5s !important;
+  }
+
+  .login_form_placeholder_active_password {
+    transform: translateY(10px) translateX(10px) !important;
+    transition: all 0.5s !important;
+  }
+
+}

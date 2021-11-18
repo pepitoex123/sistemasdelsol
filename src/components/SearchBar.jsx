@@ -8,14 +8,14 @@ const SearchBar = ({onChange,onSubmit,onClick,input}) => {
         <div className="searchbar">
             <form className="searchbar_form" onSubmit={onSubmit}>
                 <input className="searchbar_form_input" name="search" type="text" placeholder={`Buscar por ${input.filter}`} onChange={onChange} />
-                <input className="searchbar_form_submit" type="submit"/>
+                <input className="searchbar_form_submit" value={"Buscar"} type="submit"/>
                 <div className="searchbar_form_advanced">
-                    <label htmlFor="name">Nombre Comercial</label>
                     <input type="radio" name="filter" value="nombre comercial" onChange={onChange}/>
-                    <label htmlFor="company">Monodroga</label>
+                    <label htmlFor="name">Nombre Comercial</label>
                     <input type="radio" name="filter" value="monodroga" onChange={onChange}/>
-                    <label htmlFor="id">Laboratorio</label>
+                    <label htmlFor="company">Monodroga</label>
                     <input type="radio" name="filter" value="laboratorio" onChange={onChange}/>
+                    <label htmlFor="id">Laboratorio</label>
                 </div>
             </form>
         </div>

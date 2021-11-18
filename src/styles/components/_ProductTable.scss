@@ -75,10 +75,11 @@ a {
 
     th {
       background-color: rgb(212, 125, 33);
-      border: 1px solid rgb(231, 140, 93);
+      border: 1px solid white;
       text-align: center;
       color: #f5f1f1;
       font-weight: 600;
+      font-size: 12px;
 
       &:first-of-type {
         text-align: left;
