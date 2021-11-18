@@ -13,7 +13,7 @@ const Header = () => {
 
     useEffect(() =>{
         window.addEventListener("scroll",() =>{
-            if(document.body.scrollTop > 10 || document.documentElement.scrollTop > 10){
+            if(document.body.scrollTop > 1 || document.documentElement.scrollTop > 1){
                 headerRef.current.classList.add("header_is_fixed");
                 setIsScrollOn(true);
             }else{

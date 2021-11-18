@@ -55,7 +55,7 @@
 
 
 .header_is_fixed {
-  background-color: #cb7128;
+  background-color: #FC8A17;
   position: fixed;
   top: 0;
   width: 100%;
@@ -94,16 +94,16 @@
         width: 100%;
         margin: 0;
         background-color: rgba(255, 0, 0, 0.27);
-        transform: translateX(-9999px);
+        transform: translateX(-1000px);
         z-index: 20;
         position: fixed;
         display: block;
-        transition: translateX 2s;
+        transition: transform 0.7s;
 
         &_active{
           transform: translateX(0px);
           &_scroll{
-            transform: translateX(0px) translateY(31px);
+            transform: translateX(0px) translateY(16px);
           }
         }
       }
