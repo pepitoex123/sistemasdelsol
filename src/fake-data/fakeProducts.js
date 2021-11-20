@@ -1,17 +1,5 @@
 export const products = [
     {
-        nombreComercial: "AGUA MICELAR",
-        laboratorio: "Especial Pharma",
-        monodroga: "Monodroga De Especial Pharma",
-        stock: 0,
-        price: 1700,
-        priceDiscount: 500,
-        dto: 200,
-        id: 3,
-        precioConDescuento: 2000,
-        image: "https://via.placeholder.com/300"
-    },
-    {
         nombreComercial: "TRAVELGUM",
         laboratorio: "Microsules Argentina",
         monodroga: "Tamsulosina 0,4mg 30 capsulas",
@@ -68,6 +56,17 @@ export const products = [
         priceDiscount: "70%",
         dto: 900,
         precioConDescuento: 270,
+        image: "https://via.placeholder.com/300"
+    },
+    {
+        nombreComercial: "SULFADINA DE PLATA DF",
+        laboratorio: "Denver Farma",
+        monodroga: "Prednisolona 1.0% Fenilefrina 0.12% (10 ml)",
+        stock: -1,
+        price: "40%",
+        priceDiscount: "70%",
+        dto: 800,
+        precioConDescuento: 240,
         image: "https://via.placeholder.com/300"
     }
 ]
