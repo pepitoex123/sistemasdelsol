@@ -59,7 +59,8 @@
       margin: 5px 2px 5px 2px;
       & a{
         color: inherit;
-        text-decoration: inherit;
+        text-decoration: underline;
+        margin-left: 5px;
         &:hover{
           font-weight: bold;
           font-weight: 600;

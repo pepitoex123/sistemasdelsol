@@ -48,8 +48,7 @@ input[type="radio"]:checked::before {
 }
 
 input[type="radio"]:focus {
-  outline: max(2px, 0.15em) solid #FC8A17;
-  outline-offset: max(2px, 0.15em);
+  outline: none;
 }
 
 .searchbar_form_advanced input[type="radio"]:checked + label {

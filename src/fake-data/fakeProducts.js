@@ -1,30 +1,6 @@
 export const products = [
     {
-        nombreComercial: "Medicine 1",
-        laboratorio: "Los Esteros",
-        monodroga: "Monodroga De Los Esteros",
-        stock: -1,
-        price: 2500,
-        priceDiscount: 1000,
-        dto: 40,
-        id: 1,
-        precioConDescuento: 200,
-        image: "https://via.placeholder.com/300"
-    },
-    {
-        nombreComercial: "Acnoxin",
-        laboratorio: "Sinopharma",
-        monodroga: "Sars-Cov-2",
-        stock: 1,
-        price: 3000,
-        priceDiscount: 700,
-        dto: 400,
-        id: 2,
-        precioConDescuento: 200,
-        image: "https://via.placeholder.com/300"
-    },
-    {
-        nombreComercial: "Agua Micelar",
+        nombreComercial: "AGUA MICELAR",
         laboratorio: "Especial Pharma",
         monodroga: "Monodroga De Especial Pharma",
         stock: 0,
@@ -33,6 +9,65 @@ export const products = [
         dto: 200,
         id: 3,
         precioConDescuento: 2000,
+        image: "https://via.placeholder.com/300"
+    },
+    {
+        nombreComercial: "TRAVELGUM",
+        laboratorio: "Microsules Argentina",
+        monodroga: "Tamsulosina 0,4mg 30 capsulas",
+        stock: 1,
+        price: "40%",
+        priceDiscount: "70%",
+        dto: 600,
+        id: 4,
+        precioConDescuento: 180,
+        image: "https://via.placeholder.com/300"
+    },
+    {
+        nombreComercial: "MICRO-CAPE 75",
+        laboratorio: "Microsules Argentina",
+        monodroga: "Clopidogrel 75 mg",
+        stock: 1,
+        price: "40%",
+        priceDiscount: "70%",
+        dto: 500,
+        id: 5,
+        precioConDescuento: 150,
+        image: "https://via.placeholder.com/300"
+    },
+    {
+        nombreComercial: "TURBULINA",
+        laboratorio: "Microsules Argentina",
+        monodroga: "Rosuvastatina 10 mg",
+        stock: 0,
+        price: "40%",
+        priceDiscount: "70%",
+        dto: 850,
+        id: 6,
+        precioConDescuento: 255,
+        image: "https://via.placeholder.com/300"
+    },
+    {
+        nombreComercial: "IBUPROFENO FORTE",
+        laboratorio: "Klonal",
+        monodroga: "Ibuprofeno 4% (Suspensión 90 ml)",
+        stock: -1,
+        price: "35%",
+        priceDiscount: "65%",
+        dto: 400,
+        id: 7,
+        precioConDescuento: 120,
+        image: "https://via.placeholder.com/300"
+    },
+    {
+        nombreComercial: "SALBUDEM",
+        laboratorio: "Denver Farma",
+        monodroga: "Pantoprazol 20 mg (30 comprimidos)",
+        stock: 0,
+        price: "40%",
+        priceDiscount: "70%",
+        dto: 900,
+        precioConDescuento: 270,
         image: "https://via.placeholder.com/300"
     }
 ]

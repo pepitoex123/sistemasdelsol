@@ -1,3 +1,21 @@
+
+
+/*  Remember that there is this !important   */
+td[data-title="Laboratorio"],
+td[data-title="Monodroga"]{
+  text-align: left !important;
+}
+
+td[data-title="Descuento Público"],
+td[data-title="Su Descuento"],
+td[data-title="Precio"],
+td[data-title="Precio Con Descuento"]{
+  text-align: center !important;
+}
+
+
+
+
 .product {
 
   &_quantity{
@@ -38,7 +56,12 @@
       fill: limegreen;
     }
   }
+
+
 }
+
+
+
 
 @media screen and (max-width: 770px){
   .product{
@@ -69,5 +92,19 @@
     }
 
 
+  }
+
+
+  td[data-title="Laboratorio"],
+  td[data-title="Monodroga"]{
+    text-align: end !important;
+  }
+
+
+  td[data-title="Descuento Público"],
+  td[data-title="Su Descuento"],
+  td[data-title="Precio"],
+  td[data-title="Precio Con Descuento"]{
+    text-align: end !important;
   }
 }
