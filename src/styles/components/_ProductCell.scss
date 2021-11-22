@@ -29,7 +29,7 @@ td[data-title="Precio Con Descuento"]{
     }
 
     & input {
-      width: 25%;
+      width: 80%;
       text-align: center;
     }
 
@@ -72,6 +72,11 @@ td[data-title="Precio Con Descuento"]{
     &_quantity{
       justify-content: flex-end;
       width: 100%;
+
+      & input {
+        width: 25%;
+      }
+
 
       &_cancel svg {
         width: 40px;

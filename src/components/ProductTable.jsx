@@ -20,15 +20,15 @@ const ProductTable = ({input}) => {
                 <table className="responsive-table">
                     <thead>
                     <tr>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Nombre Comercial</th>
-                        <th scope="col">Laboratorio</th>
-                        <th scope="col">Monodroga</th>
-                        <th scope="col">Stock</th>
-                        <th scope="col">Descuento Público</th>
-                        <th scope="col">Su Descuento</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">Precio Con Descuento</th>
+                        <th scope="col" id="responsive-table__cantidad">Cantidad</th>
+                        <th scope="col" id="responsive-table__nombreComercial">Nombre Comercial</th>
+                        <th scope="col" id="responsive-table__laboratorio">Laboratorio</th>
+                        <th scope="col" id="responsive-table__monodroga">Monodroga</th>
+                        <th scope="col" id="responsive-table__stock">Stock</th>
+                        <th scope="col" id="responsive-table__descuentoPublico">Desc. Público</th>
+                        <th scope="col" id="responsive-table__suDescuento">Su Descuento</th>
+                        <th scope="col" id="responsive-table__precio">Precio</th>
+                        <th scope="col" id="responsive-table__precioConDescuento">Precio Con Desc.</th>
                     </tr>
                     </thead>
                     <tbody>
