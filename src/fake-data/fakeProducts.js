@@ -9,7 +9,8 @@ export const products = [
         dto: 600,
         id: 4,
         precioConDescuento: 180,
-        image: "https://via.placeholder.com/300"
+        image: "https://via.placeholder.com/300",
+        pami: 0
     },
     {
         nombreComercial: "MICRO-CAPE 75",
@@ -21,7 +22,8 @@ export const products = [
         dto: 500,
         id: 5,
         precioConDescuento: 150,
-        image: "https://via.placeholder.com/300"
+        image: "https://via.placeholder.com/300",
+        pami: 1
     },
     {
         nombreComercial: "TURBULINA",
@@ -33,7 +35,8 @@ export const products = [
         dto: 850,
         id: 6,
         precioConDescuento: 255,
-        image: "https://via.placeholder.com/300"
+        image: "https://via.placeholder.com/300",
+        pami: 1
     },
     {
         nombreComercial: "IBUPROFENO FORTE",
@@ -45,7 +48,8 @@ export const products = [
         dto: 400,
         id: 7,
         precioConDescuento: 120,
-        image: "https://via.placeholder.com/300"
+        image: "https://via.placeholder.com/300",
+        pami: 0
     },
     {
         nombreComercial: "SALBUDEM",
@@ -56,7 +60,8 @@ export const products = [
         priceDiscount: "70%",
         dto: 900,
         precioConDescuento: 270,
-        image: "https://via.placeholder.com/300"
+        image: "https://via.placeholder.com/300",
+        pami: 1
     },
     {
         nombreComercial: "SULFADINA DE PLATA DF",
@@ -67,6 +72,7 @@ export const products = [
         priceDiscount: "70%",
         dto: 800,
         precioConDescuento: 240,
-        image: "https://via.placeholder.com/300"
+        image: "https://via.placeholder.com/300",
+        pami: 1
     }
 ]

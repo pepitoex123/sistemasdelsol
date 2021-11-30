@@ -7,7 +7,7 @@ import {useState} from "react";
 const Store = () => {
     const [input,setInput] = useState({
         search: "",
-        filter: "nombre comercial"
+        filter: "monodroga"
     });
 
 

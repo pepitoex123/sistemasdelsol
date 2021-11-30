@@ -25,7 +25,6 @@ const ProductTable = ({input}) => {
                         <th scope="col" id="responsive-table__laboratorio">Laboratorio</th>
                         <th scope="col" id="responsive-table__monodroga">Monodroga</th>
                         <th scope="col" id="responsive-table__stock">Stock</th>
-                        <th scope="col" id="responsive-table__descuentoPublico">Desc. Público</th>
                         <th scope="col" id="responsive-table__suDescuento">Su Descuento</th>
                         <th scope="col" id="responsive-table__precio">Precio</th>
                         <th scope="col" id="responsive-table__precioConDescuento">Precio Con Desc.</th>

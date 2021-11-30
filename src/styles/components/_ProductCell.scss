@@ -18,6 +18,17 @@ td[data-title="Precio Con Descuento"]{
 
 .product {
 
+  &_image {
+    cursor: pointer;
+    transform: translateY(1px) translateX(-2px);
+
+    &_pami {
+      width: 10px;
+      transform: translateX(2px);
+    }
+  }
+
+
   &_quantity{
     display: flex;
     justify-content: center;

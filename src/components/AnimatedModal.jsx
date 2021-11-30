@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import coberturaPamiGrande from "./../media/cobertura-pami-mediano.png";
 
 const useStyles = makeStyles(theme => ({
     modal: {
@@ -16,10 +17,11 @@ const useStyles = makeStyles(theme => ({
         border: '2px solid #000',
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
+        position: "relative"
     },
 }));
 
-export default function AnimatedModal({show,handleClose,imgUrl,nombreComercial}) {
+export default function AnimatedModal({show,handleClose,imgUrl,nombreComercial,pami}) {
     const classes = useStyles();
 
     return (
@@ -37,9 +39,10 @@ export default function AnimatedModal({show,handleClose,imgUrl,nombreComercial})
                 }}
             >
                 <Fade in={show}>
-                    <div className={classes.paper}>
+                    <div className={classes.paper} >
                         <h2 style={{textAlign: "center"}}>{nombreComercial}</h2>
                         <img src={imgUrl} alt=""/>
+                        {pami === 1 && (<img src={coberturaPamiGrande} alt="Cobertura Pami Grande" className="modal_image_pami"/>)}
                     </div>
                 </Fade>
             </Modal>
