@@ -4,9 +4,13 @@
   &_image {
     &_pami {
       position: absolute;
-      right: 25%;
-      left: 64%;
+      right: 2%;
+      top: 15%;
       width: 100px;
+    }
+    &_close {
+      position: absolute;
+      top: 5%;
     }
   }
 }

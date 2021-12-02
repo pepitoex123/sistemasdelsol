@@ -20,11 +20,11 @@ td[data-title="Precio Con Descuento"]{
 
   &_image {
     cursor: pointer;
-    transform: translateY(1px) translateX(-2px);
+    transform: translateY(0.5px) translateX(-4px);
 
     &_pami {
-      width: 10px;
-      transform: translateX(2px);
+      margin-left: 10px;
+      vertical-align: middle;
     }
   }
 

@@ -5,6 +5,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import coberturaPamiGrande from "./../media/cobertura-pami-mediano.png";
+import {GrClose} from "react-icons/gr";
 
 const useStyles = makeStyles(theme => ({
     modal: {
@@ -43,6 +44,7 @@ export default function AnimatedModal({show,handleClose,imgUrl,nombreComercial,p
                         <h2 style={{textAlign: "center"}}>{nombreComercial}</h2>
                         <img src={imgUrl} alt=""/>
                         {pami === 1 && (<img src={coberturaPamiGrande} alt="Cobertura Pami Grande" className="modal_image_pami"/>)}
+                        <GrClose className="modal_image_close" onClick={handleClose}/>
                     </div>
                 </Fade>
             </Modal>

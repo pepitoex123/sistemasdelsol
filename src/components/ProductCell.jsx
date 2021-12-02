@@ -41,7 +41,7 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
                 </td>
                 <th scope="row">
                     <BsFillImageFill onClick={() => setShow(true)} className="product_image"/>
-                    {nombreComercial}
+                    <span>{nombreComercial}</span>
                     {pami === 1 && (<img className="product_image_pami" src={pamiCoberturaChico} alt="Pami Cobertura Chico"/>)}
                 </th>
                 <td data-title="Laboratorio" className="product_laboratorio">{laboratorio}</td>
