@@ -3,27 +3,33 @@ import Register from "./components/Register";
 import {BrowserRouter,Switch,Route} from "react-router-dom"
 import Dashboard from "./components/Dashboard";
 import Recover from "./components/Recover";
+import {CounterProvider} from "./contexts/CounterContext";
+import {CartProvider} from "./contexts/CartContext";
 
 function App() {
   return (
-    <div className="App">
-        <BrowserRouter>
-            <Switch>
-                <Route path="/login">
-                    <Login/>
-                </Route>
-                <Route path="/register">
-                    <Register/>
-                </Route>
-                <Route path="/dashboard">
-                    <Dashboard/>
-                </Route>
-                <Route path="/recover">
-                    <Recover/>
-                </Route>
-            </Switch>
-        </BrowserRouter>
-    </div>
+      <CounterProvider>
+          <CartProvider>
+              <div className="App">
+                  <BrowserRouter>
+                      <Switch>
+                          <Route path="/login">
+                              <Login/>
+                          </Route>
+                          <Route path="/register">
+                              <Register/>
+                          </Route>
+                          <Route path="/dashboard">
+                              <Dashboard/>
+                          </Route>
+                          <Route path="/recover">
+                              <Recover/>
+                          </Route>
+                      </Switch>
+                  </BrowserRouter>
+              </div>
+          </CartProvider>
+      </CounterProvider>
   );
 }
 

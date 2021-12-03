@@ -1,13 +1,16 @@
-import {useState} from "react";
+import {useState,useContext} from "react";
 import HoverText from "./HoverText";
 import AnimatedModal from "./AnimatedModal";
 import {FaCheck,FaTimes} from "react-icons/fa";
 import {BsFillImageFill} from "react-icons/bs";
 import pamiCoberturaChico from "./../media/cobertura-pami-chiquito.png";
+import {CartContext} from "../contexts/CartContext";
 
-const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDiscount,dto,precioConDescuento,image,pami}) => {
+const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDiscount,dto,precioConDescuento,image,pami,id}) => {
 
     const [isHovering,setIsHovering] = useState(false);
+
+    const {addProductToCart} = useContext(CartContext);
 
     const [show,setShow] = useState(false);
 
@@ -22,11 +25,36 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
     };
 
     const onChange = (event) => {
-        if(isNaN(event.target.value)){
+        console.log(event.target.value);
+
+
+        // Sanitizing Input!
+
+        if(isNaN(event.target.value) || event.target.value === ""){
             setInputQuantity(0);
         }else{
-            setInputQuantity(event.target.value);
+            setInputQuantity(0 + Number(event.target.value));
         }
+
+        // Time to use CartContext!
+
+
+
+        addProductToCart({
+            nombreComercial,
+            laboratorio,
+            monodroga,
+            stock,
+            price,
+            priceDiscount,
+            dto,
+            precioConDescuento,
+            image,
+            pami,
+            id
+        }, (0 + Number(event.target.value)))
+
+
     }
 
 

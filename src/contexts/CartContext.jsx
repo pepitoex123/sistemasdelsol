@@ -1,5 +1,5 @@
 
-import {createContext} from "React";
+import {createContext,useState, useContext} from "react";
 import {CounterContext} from "./CounterContext";
 
 
@@ -22,11 +22,10 @@ export const CartProvider = ({children}) => {
 
 
     const addProductToCart = (product,quantity) => {
-        let newCart = cart.map((prod) => {
+        let newCart = cart.filter((prod) => prod.quantity > 0).map((prod) => {
             if (product.id === prod.id) {
-                prod.quantity += quantity;
+                prod.quantity = quantity;
             }
-            console.log(newCart)
             return prod;
         });
         if (!newCart.some((prod) => prod.id === product.id)) {
@@ -34,7 +33,6 @@ export const CartProvider = ({children}) => {
                 ...product,
                 quantity: quantity
             });
-            console.log(newCart)
         }
         setCart(newCart);
     }

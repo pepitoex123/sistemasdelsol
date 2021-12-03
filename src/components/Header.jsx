@@ -3,6 +3,7 @@ import {BiUserCircle,BiStore,BiCart,BiHome,BiX} from "react-icons/bi";
 import {Link} from "react-router-dom";
 import {useEffect, useRef,useState} from "react";
 import {GiHamburgerMenu,GiCancel} from "react-icons/gi";
+import CartWidget from "./CartWidget";
 
 
 const Header = () => {
@@ -37,7 +38,7 @@ const Header = () => {
                         <ul>
                             <Link to="/dashboard" style={{color: 'inherit', textDecoration: 'inherit'}}><li><BiHome/>Inicio</li></Link>
                             <Link to="/dashboard/store" style={{ color: 'inherit', textDecoration: 'inherit'}}><li><BiStore/>Productos</li></Link>
-                            <li><BiCart/>Carrito</li>
+                            <CartWidget/>
                             <li><BiUserCircle/>Cuenta</li>
                             <span className="header_nav_mobile" onClick={() => setIsMobileNavbarOn(!isMobileNavbarOn)}>
                             {
