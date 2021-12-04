@@ -9,7 +9,7 @@ const CartCheckoutTable = () => {
 
     return(
         <section>
-            <div className="container">
+            <div className="container container-cart">
                 <table className="responsive-table">
                     <thead>
                     <tr>
