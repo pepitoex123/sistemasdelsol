@@ -50,19 +50,19 @@ const keysToCamel = function (o) {
 };
 
 
-async function getProducts(){
-    fetch("http://drogueriadelsol.com.ar/sistema/php/buscar_items.php",{
-        headers: {
-            "Access-Control-Allow-Origin": "*"
-        },
-        mode: "no-cors"
-    })
-        .then((response) => {
-            let data = JSON.parse(response)
-            let sanitizedProducts = keysToCamel(response)
-            console.log("Los productos son: ", sanitizedProducts)
-        })
+function traerItems(){
+        var xmlhttp1 = new XMLHttpRequest();
+        xmlhttp1.onreadystatechange = function() {
+            if (xmlhttp1.readyState==4 && xmlhttp1.status==200) {
+                respuesta1 = xmlhttp1.responseText;
+                console.log(respuesta1)
+            }}
+        var cadenaParametros = "";
+        xmlhttp1.open('POST', 'http://drogueriadelsol.com.ar/sistema/php/buscar_items.php',true);
+        xmlhttp1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp1.send(cadenaParametros);
 }
+
 
 
 
