@@ -10,7 +10,7 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
 
     const [isHovering,setIsHovering] = useState(false);
 
-    const {addProductToCart} = useContext(CartContext);
+    const {addProductToCart,cart} = useContext(CartContext);
 
     const [show,setShow] = useState(false);
 
@@ -57,6 +57,11 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
 
     }
 
+    const item = cart.find((item) => item.id === id)
+
+    const quantity = item ? item.quantity : null
+
+
 
     return(
         <>
@@ -64,7 +69,7 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
             <tr className="product">
                 <td data-title="Cantidad">
                     <div className="product_quantity">
-                        <input type="text" name="name" value={inputQuantity} onChange={onChange}/>
+                        <input type="text" name="name" value={(quantity ? quantity : inputQuantity)} onChange={onChange}/>
                     </div>
                 </td>
                 <th scope="row">
