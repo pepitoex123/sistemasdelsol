@@ -58,8 +58,9 @@ function traerItems(){
                 console.log(respuesta1)
             }}
         var cadenaParametros = "";
-        xmlhttp1.open('POST', 'http://drogueriadelsol.com.ar/sistema/php/buscar_items.php',true);
+        xmlhttp1.open('GET', 'http://drogueriadelsol.com.ar/sistema/php/buscar_items.php',true);
         xmlhttp1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp1.setRequestHeader("Access-Control-Allow-Origin", "*");
         xmlhttp1.send(cadenaParametros);
 }
 
