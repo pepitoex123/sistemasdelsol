@@ -1,5 +1,6 @@
 import ProductCell from "./ProductCell";
 import {products} from "../fake-data/fakeProducts";
+import {useEffect,useState} from "react";
 
 
 const ProductTable = ({input}) => {
@@ -10,7 +11,38 @@ const ProductTable = ({input}) => {
         }).replace(/\s+/g, '');
     }
 
+    const [productsToFetch,setProductsToFetch] = useState(null);
+
+
+    function traerItems(){
+        let itemsArray;
+        var xmlhttp1 = new XMLHttpRequest();
+        xmlhttp1.onreadystatechange = function() {
+            if (xmlhttp1.readyState==4 && xmlhttp1.status==200) {
+                let respuesta1 = xmlhttp1.responseText;
+                console.log(respuesta1)
+                itemsArray = JSON.parse(respuesta1);
+                console.log(itemsArray)
+                return itemsArray
+            }}
+        var cadenaParametros = "";
+        xmlhttp1.open('POST', 'php/buscar_items.php',true);
+        xmlhttp1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp1.send(cadenaParametros);
+        return itemsArray;
+    }
+
+
+    useEffect(() => {
+        setProductsToFetch(traerItems());
+    },[])
+
+
+
     let sanitizedInput = camelize(input.filter)
+
+
+
 
 
 
@@ -32,11 +64,11 @@ const ProductTable = ({input}) => {
                     </thead>
                     <tbody>
                     {
-                        input.search ? products.filter((product) => product[sanitizedInput].toLowerCase().includes(input.search.toLowerCase())).map((product) => (
+                        productsToFetch ? ( input.search ? productsToFetch.filter((product) => product[sanitizedInput].toLowerCase().includes(input.search.toLowerCase())).map((product) => (
                             <ProductCell key={product.id} {...product} />
-                        )) : products.map((product) => (
+                        )) : productsToFetch.map((product) => (
                             <ProductCell key={product.id} {...product} />
-                        ))
+                        )) ) : ""
                     }
                     </tbody>
                 </table>
