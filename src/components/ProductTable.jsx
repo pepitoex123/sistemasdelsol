@@ -23,10 +23,10 @@ const ProductTable = ({input}) => {
                 console.log(respuesta1)
                 itemsArray = JSON.parse(respuesta1);
                 console.log(itemsArray)
-                return itemsArray
+                setProductsToFetch(itemsArray)
             }}
         var cadenaParametros = "";
-        xmlhttp1.open('POST', './../../php/buscar_items.php',true);
+        xmlhttp1.open('POST', './../../../php/buscar_items.php',true);
         xmlhttp1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xmlhttp1.send(cadenaParametros);
         return itemsArray;
