@@ -13,7 +13,7 @@ function App() {
               <div className="App">
                   <BrowserRouter>
                       <Switch>
-                          <Route path="/login">
+                          <Route exact path="/">
                               <Login/>
                           </Route>
                           <Route path="/register">

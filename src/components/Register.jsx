@@ -74,7 +74,7 @@ const Register = () => {
                     <label htmlFor="confirmPassword">Confirmar contraseña</label>
                 </div>
                 <input type="password" className="register_form_input" name="confirmPassword" id="confirmPassword" onChange={(e) => onChange(e) }/>
-                <span className="register_form_link">¿Ya tienes una cuenta?<Link to="/login"><a>Inicia Sesión</a></Link></span>
+                <span className="register_form_link">¿Ya tienes una cuenta?<Link to="/"><a>Inicia Sesión</a></Link></span>
                 <input type="submit" value="Registrarse" className="register_form_submit"/>
             </form>
         </section>
