@@ -26,7 +26,7 @@ const ProductTable = ({input}) => {
                 setProductsToFetch(itemsArray)
             }}
         var cadenaParametros = "";
-        xmlhttp1.open('POST', './../../../php/buscar_items.php',true);
+        xmlhttp1.open('POST', '../php/buscar_items.php',true);
         xmlhttp1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xmlhttp1.send(cadenaParametros);
         return itemsArray;
