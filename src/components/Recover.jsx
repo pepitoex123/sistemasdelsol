@@ -62,7 +62,7 @@ const Recover = () => {
                 </div>
                 <input type="email" autoComplete="off" className="recover_form_input" name="email" id="email" onChange={(e) => onChange(e)}/>
                 <input type="submit" value="Recuperar Cuenta" className="recover_form_submit"/>
-                <span className="register_form_link">¿Ya tienes una cuenta?<Link to="/login"><a>Inicia Sesión</a></Link></span>
+                <span className="register_form_link">¿Ya tienes una cuenta?<Link to="/"><a>Inicia Sesión</a></Link></span>
                 <span className="recover_form_link">¿No tenés una cuenta?<Link to="/register">Registrate Ahora</Link></span>
             </form>
         </section>
