@@ -33,8 +33,8 @@ const ProductTable = ({input}) => {
     }
 
 
-    useEffect(() => {
-        setProductsToFetch(traerItems());
+    useEffect(async () => {
+        await traerItems();
     },[])
 
 
