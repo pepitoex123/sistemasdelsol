@@ -6,7 +6,7 @@ import {BsFillImageFill} from "react-icons/bs";
 import pamiCoberturaChico from "./../media/cobertura-pami-chiquito.png";
 import {CartContext} from "../contexts/CartContext";
 
-const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDiscount,dto,precioConDescuento,image,pami,id}) => {
+const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDiscount,dto,precioConDescuento,image,coberturaPami,id}) => {
 
     const [isHovering,setIsHovering] = useState(false);
 
@@ -50,7 +50,7 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
             dto,
             precioConDescuento,
             image,
-            pami,
+            coberturaPami,
             id
         }, (0 + Number(event.target.value)))
 
@@ -65,7 +65,7 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
 
     return(
         <>
-            <AnimatedModal show={show} handleClose={() => setShow(false)} imgUrl={image} nombreComercial={nombreComercial} pami={pami}/>
+            <AnimatedModal show={show} handleClose={() => setShow(false)} imgUrl={image} nombreComercial={nombreComercial} coberturaPami={coberturaPami}/>
             <tr className="product">
                 <td data-title="Cantidad">
                     <div className="product_quantity">
@@ -75,15 +75,15 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
                 <th scope="row">
                     <BsFillImageFill onClick={() => setShow(true)} className="product_image"/>
                     <span>{nombreComercial}</span>
-                    {pami === 1 && (<img className="product_image_pami" src={pamiCoberturaChico} alt="Pami Cobertura Chico"/>)}
+                    {coberturaPami === "1" && (<img className="product_image_pami" src={pamiCoberturaChico} alt="Pami Cobertura Chico"/>)}
                 </th>
                 <td data-title="Laboratorio" className="product_laboratorio">{laboratorio}</td>
                 <td data-title="Monodroga" className="product_monodroga">{monodroga}</td>
                 <td data-title="Stock" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
 
-                    {stock === -1 && (<div className="product_quantity_cancel">{isHovering && (<HoverText text={"El producto no tiene stock!"} stockState={"#EA3C53"}/>)} <FaTimes/>  </div>)}
-                    {stock === 0 && (<div className="product_quantity_pending">{isHovering && (<HoverText text={"El producto tendrá stock en poco tiempo!"} stockState={"#FFC30B"}/>)} <FaCheck/>   </div>)}
-                    {stock === 1 && (<div className="product_quantity_check">{isHovering && (<HoverText text={"El producto tiene stock!"} stockState={"green"}/>)} <FaCheck/> </div>)}
+                    {stock === "-1" && (<div className="product_quantity_cancel">{isHovering && (<HoverText text={"El producto no tiene stock!"} stockState={"#EA3C53"}/>)} <FaTimes/>  </div>)}
+                    {stock === "0" && (<div className="product_quantity_pending">{isHovering && (<HoverText text={"El producto tendrá stock en poco tiempo!"} stockState={"#FFC30B"}/>)} <FaCheck/>   </div>)}
+                    {stock === "1" && (<div className="product_quantity_check">{isHovering && (<HoverText text={"El producto tiene stock!"} stockState={"green"}/>)} <FaCheck/> </div>)}
                 </td>
                 <td data-title="Su Descuento" data-type="currency">{priceDiscount}</td>
                 <td data-title="Precio" data-type="currency">${dto}</td>

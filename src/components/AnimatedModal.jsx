@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function AnimatedModal({show,handleClose,imgUrl,nombreComercial,pami}) {
+export default function AnimatedModal({show,handleClose,imgUrl,nombreComercial,coberturaPami}) {
     const classes = useStyles();
 
     return (
@@ -43,7 +43,7 @@ export default function AnimatedModal({show,handleClose,imgUrl,nombreComercial,p
                     <div className={classes.paper} >
                         <h2 style={{textAlign: "center"}}>{nombreComercial}</h2>
                         <img src={imgUrl} alt=""/>
-                        {pami === 1 && (<img src={coberturaPamiGrande} alt="Cobertura Pami Grande" className="modal_image_pami"/>)}
+                        {coberturaPami === "1" && (<img src={coberturaPamiGrande} alt="Cobertura Pami Grande" className="modal_image_pami"/>)}
                         <GrClose className="modal_image_close" onClick={handleClose}/>
                     </div>
                 </Fade>
