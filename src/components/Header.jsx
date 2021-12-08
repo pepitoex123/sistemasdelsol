@@ -16,8 +16,7 @@ const Header = () => {
 
 
 
-
-    useEffect(() =>{
+    useEffect(() => {
         window.addEventListener("scroll",() =>{
             if(document.body.scrollTop > 1 || document.documentElement.scrollTop > 1){
                 headerRef.current.classList.add("header_is_fixed");
@@ -31,6 +30,9 @@ const Header = () => {
             };
         })
     },[]);
+
+
+
 
 
 
