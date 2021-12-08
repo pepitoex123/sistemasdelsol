@@ -19,7 +19,7 @@ const CartCheckoutTable = () => {
                     </thead>
                     <tbody>
                         {
-                            cart.map((cartItem) => (<CartCheckoutCell cantidad={cartItem.quantity} nombreComercial={cartItem.nombreComercial}/>))
+                            cart.filter((cartItem) => cartItem.quantity > 0).map((cartItem) => (<CartCheckoutCell cantidad={cartItem.quantity} nombreComercial={cartItem.nombreComercial}/>))
                         }
                     </tbody>
                 </table>

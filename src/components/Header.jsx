@@ -1,7 +1,7 @@
 import Logo from "./../media/headerlogo.png";
 import {BiUserCircle,BiStore,BiCart,BiHome,BiX} from "react-icons/bi";
 import {Link} from "react-router-dom";
-import {useEffect, useRef,useState} from "react";
+import {useEffect, useRef,useState,useContext} from "react";
 import {GiHamburgerMenu,GiCancel} from "react-icons/gi";
 import CartWidget from "./CartWidget";
 
@@ -9,8 +9,13 @@ import CartWidget from "./CartWidget";
 const Header = () => {
     const headerRef = useRef(null);
 
+
     const [isMobileNavbarOn, setIsMobileNavbarOn] = useState(false);
     const [isScrollOn,setIsScrollOn] = useState(false);
+
+
+
+
 
     useEffect(() =>{
         window.addEventListener("scroll",() =>{
