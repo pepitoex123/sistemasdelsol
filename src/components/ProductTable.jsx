@@ -1,5 +1,8 @@
 import ProductCell from "./ProductCell";
 import {products} from "../fake-data/fakeProducts";
+import {AiFillPlusCircle} from "react-icons/ai";
+import {BiHome} from "react-icons/bi";
+import {Link} from "react-router-dom";
 
 
 const ProductTable = ({input}) => {
@@ -40,6 +43,11 @@ const ProductTable = ({input}) => {
                     }
                     </tbody>
                 </table>
+                <div className={"container__add"}>
+                    <Link to="/dashboard/addproduct" style={{color: 'inherit', textDecoration: 'inherit'}}>
+                        <AiFillPlusCircle/>
+                    </Link>
+                </div>
             </div>
         </section>
     )

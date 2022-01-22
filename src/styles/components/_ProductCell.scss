@@ -27,6 +27,13 @@ td[data-title="Precio Con Descuento"]{
       vertical-align: middle;
       transform: translateY(-1.7px);
     }
+
+    &_edit {
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      transform: translateY(3px) translateX(4px);
+    }
   }
 
 
@@ -81,6 +88,11 @@ td[data-title="Precio Con Descuento"]{
       display: flex;
       align-items: center;
     }
+
+    &_image_edit {
+      transform: translateY(2.8px) translateX(4px);
+    }
+
     &_quantity{
       justify-content: flex-end;
       width: 100%;

@@ -1,0 +1,40 @@
+.addproductform {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+
+
+
+  & div {
+    display: flex;
+    flex-direction: row;
+
+    & input {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+
+    &__constock {
+      fill: green;
+    }
+
+    &__commecistock {
+      fill: #FFC30B;
+    }
+
+    &__nostock {
+      fill: #EA3C53;
+    }
+  }
+
+
+  &__submit {
+    margin-top: 20px;
+  }
+}

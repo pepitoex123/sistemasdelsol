@@ -3,6 +3,7 @@ import HoverText from "./HoverText";
 import AnimatedModal from "./AnimatedModal";
 import {FaCheck,FaTimes} from "react-icons/fa";
 import {BsFillImageFill} from "react-icons/bs";
+import {AiFillEdit} from "react-icons/ai";
 import pamiCoberturaChico from "./../media/cobertura-pami-chiquito.png";
 import {CartContext} from "../contexts/CartContext";
 
@@ -76,6 +77,7 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
                     <BsFillImageFill onClick={() => setShow(true)} className="product_image"/>
                     <span>{nombreComercial}</span>
                     {pami === 1 && (<img className="product_image_pami" src={pamiCoberturaChico} alt="Pami Cobertura Chico"/>)}
+                    <AiFillEdit className="product_image_edit"/>
                 </th>
                 <td data-title="Laboratorio" className="product_laboratorio">{laboratorio}</td>
                 <td data-title="Monodroga" className="product_monodroga">{monodroga}</td>

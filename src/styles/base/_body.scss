@@ -56,4 +56,9 @@ input[type="radio"]:focus {
   font-weight: bold;
 }
 
+.addproductform input[type="radio"]:checked + label {
+  color: #FC8A17;
+  font-weight: bold;
+}
+
 
