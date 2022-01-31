@@ -61,7 +61,8 @@ export const products = [
         dto: 900,
         precioConDescuento: 270,
         image: "https://via.placeholder.com/300",
-        pami: 1
+        pami: 1,
+        id: 9
     },
     {
         nombreComercial: "SULFADINA DE PLATA DF",
@@ -73,6 +74,7 @@ export const products = [
         dto: 800,
         precioConDescuento: 240,
         image: "https://via.placeholder.com/300",
-        pami: 1
+        pami: 1,
+        id: 14
     }
 ]

@@ -3,6 +3,7 @@ import {Switch,Route} from "react-router-dom";
 import Store from "./Store";
 import CartCheckout from "./CartCheckout";
 import AddProduct from "./AddProduct";
+import EditProduct from "./EditProduct";
 
 
 const Dashboard = () => {
@@ -20,6 +21,9 @@ const Dashboard = () => {
                 </Route>
                 <Route path="/dashboard/addproduct">
                     <AddProduct/>
+                </Route>
+                <Route path="/dashboard/editproduct/:id">
+                    <EditProduct/>
                 </Route>
             </Switch>
         </div>

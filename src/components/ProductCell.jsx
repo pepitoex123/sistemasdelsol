@@ -6,6 +6,7 @@ import {BsFillImageFill} from "react-icons/bs";
 import {AiFillEdit} from "react-icons/ai";
 import pamiCoberturaChico from "./../media/cobertura-pami-chiquito.png";
 import {CartContext} from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDiscount,dto,precioConDescuento,image,pami,id}) => {
 
@@ -77,7 +78,9 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
                     <BsFillImageFill onClick={() => setShow(true)} className="product_image"/>
                     <span>{nombreComercial}</span>
                     {pami === 1 && (<img className="product_image_pami" src={pamiCoberturaChico} alt="Pami Cobertura Chico"/>)}
-                    <AiFillEdit className="product_image_edit"/>
+                    <Link to={`/dashboard/editproduct/${id}`}>
+                        <AiFillEdit className="product_image_edit"/>
+                    </Link>
                 </th>
                 <td data-title="Laboratorio" className="product_laboratorio">{laboratorio}</td>
                 <td data-title="Monodroga" className="product_monodroga">{monodroga}</td>
