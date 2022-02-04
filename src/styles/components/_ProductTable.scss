@@ -270,9 +270,13 @@ a {
   justify-content: center;
 
   & svg {
-    height: 40px;
-    width: 40px;
-    fill: limegreen;
+    height: 100px;
+    width: 100px;
+    fill: $colorPrincipal;
+    opacity: 0.8;
     cursor: pointer;
+    position: fixed;
+    top: 80vh;
+    left: 86vw;
   }
 }

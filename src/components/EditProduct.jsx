@@ -1,4 +1,5 @@
 import {useParams} from "react-router-dom";
+import EditProductForm from "./EditProductForm";
 
 const EditProduct = () => {
 
@@ -7,7 +8,8 @@ const EditProduct = () => {
 
     return (
         <div>
-            Edit Product { id }
+            <h1 className="editproduct__title">Editar producto { id } </h1>
+            <EditProductForm/>
         </div>
     )
 }
