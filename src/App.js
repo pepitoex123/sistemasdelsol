@@ -11,7 +11,7 @@ function App() {
       <CounterProvider>
           <CartProvider>
               <div className="App">
-                  <BrowserRouter>
+                  <BrowserRouter basename="/sistema/">
                       <Switch>
                           <Route exact path="/">
                               <Login/>

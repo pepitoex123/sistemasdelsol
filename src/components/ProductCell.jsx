@@ -84,12 +84,20 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
                 </th>
                 <td data-title="Laboratorio" className="product_laboratorio">{laboratorio}</td>
                 <td data-title="Monodroga" className="product_monodroga">{monodroga}</td>
+                {/*
+
+
                 <td data-title="Stock" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
 
                     {stock === -1 && (<div className="product_quantity_cancel">{isHovering && (<HoverText text={"El producto no tiene stock!"} stockState={"#EA3C53"}/>)} <FaTimes/>  </div>)}
                     {stock === 0 && (<div className="product_quantity_pending">{isHovering && (<HoverText text={"El producto tendrá stock en poco tiempo!"} stockState={"#FFC30B"}/>)} <FaCheck/>   </div>)}
                     {stock === 1 && (<div className="product_quantity_check">{isHovering && (<HoverText text={"El producto tiene stock!"} stockState={"green"}/>)} <FaCheck/> </div>)}
                 </td>
+
+
+
+                */}
+
                 <td data-title="Su Descuento" data-type="currency">{priceDiscount}</td>
                 <td data-title="Precio" data-type="currency">${dto}</td>
                 <td data-title="Precio Con Descuento" data-type="currency">${precioConDescuento}</td>

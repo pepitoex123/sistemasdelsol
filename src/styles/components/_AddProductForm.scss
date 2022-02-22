@@ -6,6 +6,10 @@
 
 
 
+  &__text {
+    text-align: center;
+  }
+
 
   & div {
     display: flex;
@@ -19,6 +23,7 @@
 
   &__label {
     font-weight: 700;
+    margin-top: 10px;
 
     &__constock {
       fill: green;
@@ -36,5 +41,13 @@
 
   &__submit {
     margin-top: 20px;
+    cursor: pointer;
+  }
+
+  &__cancel {
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: rgba(0,0,0,.12);
+    color: black;
   }
 }
