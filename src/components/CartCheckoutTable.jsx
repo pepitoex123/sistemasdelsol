@@ -2,9 +2,11 @@ import CartCheckoutCell from "./CartCheckoutCell";
 import {CartContext} from "../contexts/CartContext";
 import {useContext} from "react";
 
+
 const CartCheckoutTable = () => {
 
     const {cart} = useContext(CartContext);
+
 
 
     return(

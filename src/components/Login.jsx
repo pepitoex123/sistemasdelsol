@@ -1,14 +1,21 @@
 import Logo from "./../media/logo.png";
 import {BiUser,BiKey} from "react-icons/bi";
-import {Link} from "react-router-dom";
-import {useState,useRef} from "react";
+import {Link,useHistory} from "react-router-dom";
+import {useState,useRef,useContext} from "react";
+import axios from "axios";
+import {toast} from "react-toastify";
+import {UserContext} from "../contexts/UserContext";
 
 const Login = () => {
 
     // TODO : Vistas mobile
 
+    let history = useHistory();
+
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
+
+    const {user,setUser} = useContext(UserContext);
 
     const [inputs,setInputs] = useState({
         email: "",
@@ -44,7 +51,30 @@ const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(...inputs);
+        const formData = new FormData();
+        formData.append("email",inputs["email"]);
+        formData.append("password",inputs["password"]);
+        axios
+            .post("php/iniciar_sesion.php",formData)
+            .then((res) => {
+                toast.success("Éxito!");
+                console.log(res.data);
+                setUser({
+                    token: res.data["token_actualizado"],
+                    datos: {
+                        nombreFarmacia: res.data["nombre_farmacia_actualizado"],
+                        descuento: res.data["descuento"],
+                        correo: res.data["correo_actualizado"]
+                    },
+                    id: res.data["id"],
+                    idCuenta: res.data["id_cuenta"],
+                    admin: res.data["admin_actualizado"]
+                })
+                history.push("/dashboard");
+            })
+            .catch((err) => {
+                toast.error("Algo ha salido mal!",err);
+            })
     }
 
 
@@ -68,7 +98,6 @@ const Login = () => {
                 <input type="submit" value="Iniciar Sesión" className="login_form_submit"/>
                 <span className="login_form_link">¿Olvidaste tu contraseña?<Link to="/recover">Hacé click acá</Link></span>
                 <span className="login_form_link">¿No tenés una cuenta?<Link to="/register">Registrate Ahora</Link></span>
-                <span className="login_dashboard"><Link to="/dashboard">dashboard previsory link</Link></span>
             </form>
         </section>
     )

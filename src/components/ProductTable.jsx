@@ -3,7 +3,9 @@ import {products} from "../fake-data/fakeProducts";
 import {AiFillPlusCircle} from "react-icons/ai";
 import {BiHome} from "react-icons/bi";
 import {Link} from "react-router-dom";
-import {useState,useEffect} from "react";
+import {useState,useEffect,useContext} from "react";
+import {PaginationContext} from "../contexts/PaginationContext";
+import {UserContext} from "../contexts/UserContext";
 
 
 const ProductTable = ({input}) => {
@@ -14,10 +16,20 @@ const ProductTable = ({input}) => {
         }).replace(/\s+/g, '');
     }
 
+    const {pagination,setNumberPages,clearPagination} = useContext(PaginationContext);
+
+    const {user} = useContext(UserContext);
+
+    
+
     const [productsToFetch,setProductsToFetch] = useState(null);
 
 
+
+
+
     function traerItems(){
+        console.log("Entre en la función!")
         let itemsArray;
         var xmlhttp1 = new XMLHttpRequest();
         xmlhttp1.onreadystatechange = function() {
@@ -25,10 +37,11 @@ const ProductTable = ({input}) => {
                 let respuesta1 = xmlhttp1.responseText;
                 console.log(respuesta1)
                 itemsArray = JSON.parse(respuesta1);
-                console.log(itemsArray)
-                setProductsToFetch(itemsArray)
+                console.log(itemsArray);
+                setNumberPages(Number(itemsArray[0]));
+                setProductsToFetch(itemsArray[1]);
             }}
-        var cadenaParametros = "";
+        var cadenaParametros = `Search=${encodeURIComponent(input.search)}&Filter=${encodeURIComponent(input.filter)}&SelectedPage=${encodeURIComponent(pagination.selectedPage)}`;
         xmlhttp1.open('POST', '../php/buscar_items.php',true);
         xmlhttp1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xmlhttp1.send(cadenaParametros);
@@ -36,9 +49,12 @@ const ProductTable = ({input}) => {
     }
 
 
-    useEffect(async () => {
-        await traerItems();
-    },[])
+    useEffect( () => {
+        const interval = setInterval(async () => {
+            await traerItems();
+        }, 3000);
+        return () => clearInterval(interval);
+    },[input,pagination.selectedPage])
 
 
 
@@ -73,11 +89,15 @@ const ProductTable = ({input}) => {
                     }
                     </tbody>
                 </table>
-                <div className={"container__add"}>
-                    <Link to="/dashboard/addproduct" style={{color: 'inherit', textDecoration: 'inherit'}}>
-                        <AiFillPlusCircle/>
-                    </Link>
-                </div>
+                {
+                    user["admin"] === "1" ? (
+                        <div className={"container__add"}>
+                            <Link to="/dashboard/addproduct" style={{color: 'inherit', textDecoration: 'inherit'}}>
+                                <AiFillPlusCircle/>
+                            </Link>
+                        </div>
+                    ) : ""
+                }
             </div>
         </section>
     )

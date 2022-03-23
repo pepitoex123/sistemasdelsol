@@ -1,10 +1,17 @@
 import { FcSearch } from "react-icons/fc";
 import SearchBar from "./SearchBar";
 import ProductTable from "./ProductTable";
-import {useState} from "react";
+import {useState, useContext, useEffect} from "react";
+import Pagination from "./Pagination";
+import {PaginationContext} from "../contexts/PaginationContext";
 
 
 const Store = () => {
+
+
+    const {pagination,clearPagination} = useContext(PaginationContext);
+
+
     const [input,setInput] = useState({
         search: "",
         filter: "monodroga"
@@ -12,6 +19,7 @@ const Store = () => {
 
 
     const onChange = (e) => {
+        clearPagination();
         setInput({
             ...input,
             [e.target.name]: e.target.value
@@ -28,11 +36,16 @@ const Store = () => {
 
     }
 
+    useEffect(() => {
+        console.log("Componente store refrescado!");
+    },[])
+
 
     return(
         <section className="store">
             <SearchBar onSubmit={onSubmit} onChange={onChange} onClick={onClick} input={input} />
             <hr/>
+            <Pagination/>
             <ProductTable input={input}/>
         </section>
     )

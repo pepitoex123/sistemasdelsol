@@ -54,7 +54,22 @@ const EditProductForm = ({nombreComercial,laboratorio,monodroga,coberturaPami,pr
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(inputSubmit);
-        actualizarItem();
+        //actualizarItem();
+        const formData = new FormData();
+        formData.append("nombreComercial", inputSubmit["nombreComercial"]);
+        formData.append("laboratorio", inputSubmit["laboratorio"]);
+        formData.append("monodroga", inputSubmit["monodroga"]);
+        formData.append("precio", inputSubmit["precio"]);
+        formData.append("image", inputSubmit["image"]);
+        formData.append("codigoInterno",inputSubmit["codigoInterno"]);
+        formData.append("descuentoLista", inputSubmit["descuentoLista"]);
+        formData.append("coberturaPami", inputSubmit["coberturaPami"]);
+        axios
+            .post("../../php/guardar_item_imagen.php", formData)
+            .then((res) => {
+                console.log("File Upload success",res);
+            })
+            .catch((err) => console.log("File Upload Error", err));
         history.push("/dashboard/store");
     }
 
@@ -105,6 +120,8 @@ const EditProductForm = ({nombreComercial,laboratorio,monodroga,coberturaPami,pr
 
             <label htmlFor="precio" className="editproductform__label">Precio</label>
             <input type="text" id={"price"} value={inputSubmit["precio"]} name={"precio"} className="editproductform__text" onChange={onChange}/>
+            <label htmlFor="image" className="editproductform__label">Imagen</label>
+            <input type="file" id="image" name="image" onChange={onChange}/>
             <div>
                 <button className="searchbar_form_submit editproductform__cancel" onClick={onCancel}>Cancelar</button>
                 <input type="submit" value={"Editar Producto"} className="editproductform__submit searchbar_form_submit" onClick={onSubmit}/>

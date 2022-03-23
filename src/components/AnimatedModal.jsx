@@ -42,8 +42,8 @@ export default function AnimatedModal({show,handleClose,imgUrl,nombreComercial,p
                 <Fade in={show}>
                     <div className={classes.paper} >
                         <h2 style={{textAlign: "center"}}>{nombreComercial}</h2>
-                        <img src={imgUrl} alt=""/>
-                        {pami === 1 && (<img src={coberturaPamiGrande} alt="Cobertura Pami Grande" className="modal_image_pami"/>)}
+                        <img src={imgUrl} alt="" width={300} height={300} />
+                        {pami === "1" && (<img src={coberturaPamiGrande} alt="Cobertura Pami Grande" className="modal_image_pami"/>)}
                         <GrClose className="modal_image_close" onClick={handleClose}/>
                     </div>
                 </Fade>

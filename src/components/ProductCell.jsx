@@ -7,12 +7,16 @@ import {AiFillEdit} from "react-icons/ai";
 import pamiCoberturaChico from "./../media/cobertura-pami-chiquito.png";
 import {CartContext} from "../contexts/CartContext";
 import { Link } from "react-router-dom";
+import {UserContext} from "../contexts/UserContext";
 
-const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDiscount,dto,precioConDescuento,image,pami,id}) => {
+const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,precio,priceDiscount,dto,precioConDescuento,image,coberturaPami,id}) => {
 
     const [isHovering,setIsHovering] = useState(false);
 
     const {addProductToCart,cart} = useContext(CartContext);
+
+
+    const {user} = useContext(UserContext);
 
     const [show,setShow] = useState(false);
 
@@ -47,12 +51,12 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
             laboratorio,
             monodroga,
             stock,
-            price,
+            precio,
             priceDiscount,
             dto,
             precioConDescuento,
             image,
-            pami,
+            coberturaPami,
             id
         }, (0 + Number(event.target.value)))
 
@@ -67,7 +71,7 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
 
     return(
         <>
-            <AnimatedModal show={show} handleClose={() => setShow(false)} imgUrl={image} nombreComercial={nombreComercial} pami={pami}/>
+            <AnimatedModal show={show} handleClose={() => setShow(false)} imgUrl={image} nombreComercial={nombreComercial} pami={coberturaPami}/>
             <tr className="product">
                 <td data-title="Cantidad">
                     <div className="product_quantity">
@@ -77,10 +81,14 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
                 <th scope="row">
                     <BsFillImageFill onClick={() => setShow(true)} className="product_image"/>
                     <span>{nombreComercial}</span>
-                    {pami === 1 && (<img className="product_image_pami" src={pamiCoberturaChico} alt="Pami Cobertura Chico"/>)}
-                    <Link to={`/dashboard/editproduct/${id}`}>
-                        <AiFillEdit className="product_image_edit"/>
-                    </Link>
+                    {coberturaPami === "1" && (<img className="product_image_pami" src={pamiCoberturaChico} alt="Pami Cobertura Chico"/>)}
+                    {
+                        user["admin"] === "1" ? (
+                            <Link to={`/dashboard/editproduct/${id}`}>
+                                <AiFillEdit className="product_image_edit"/>
+                            </Link>
+                        ) : ""
+                    }
                 </th>
                 <td data-title="Laboratorio" className="product_laboratorio">{laboratorio}</td>
                 <td data-title="Monodroga" className="product_monodroga">{monodroga}</td>
@@ -98,9 +106,9 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,price,priceDis
 
                 */}
 
-                <td data-title="Su Descuento" data-type="currency">{priceDiscount}</td>
-                <td data-title="Precio" data-type="currency">${dto}</td>
-                <td data-title="Precio Con Descuento" data-type="currency">${precioConDescuento}</td>
+                <td data-title="Su Descuento" data-type="currency">{user["datos"]["descuento"]}</td>
+                <td data-title="Precio" data-type="currency">${precio}</td>
+                <td data-title="Precio Con Descuento" data-type="currency">${Number(user["datos"]["descuento"]) === 0 ?  precio : (((100 - Number(user["datos"]["descuento"])) * Number(precio)) / 100)}</td>
             </tr>
         </>
     )

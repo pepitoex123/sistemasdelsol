@@ -106,6 +106,45 @@
   transition: all 0.5s !important;
 }
 
+.register_form_placeholder_active_nombrefarmacia {
+  transform: translateY(35px) translateX(-170px) !important;
+  transition: all 0.5s !important;
+}
+
+.register_form_placeholder_active_razonsocial {
+  transform: translateY(35px) translateX(-134px) !important;
+  transition: all 0.5s !important;
+}
+
+.register_form_placeholder_active_nombreapellidocontacto {
+  transform: translateY(35px) translateX(-170px) !important;
+  transition: all 0.5s !important;
+}
+
+.register_form_placeholder_active_telefonocontacto {
+  transform: translateY(35px) translateX(-170px) !important;
+  transition: all 0.5s !important;
+}
+
+.register_form_placeholder_active_whatsappcontacto {
+  transform: translateY(35px) translateX(-180px) !important;
+  transition: all 0.5s !important;
+}
+
+.register_form_placeholder_active_direccion {
+  transform: translateY(35px) translateX(-110px) !important;
+  transition: all 0.5s !important;
+}
+
+.register_form_placeholder_active_provincia {
+  transform: translateY(35px) translateX(-110px) !important;
+  transition: all 0.5s !important;
+}
+
+.register_form_placeholder_active_ciudad {
+  transform: translateY(35px) translateX(-96px) !important;
+  transition: all 0.5s !important;
+}
 
 @media screen and (max-width: 650px){
   .register {
@@ -130,6 +169,46 @@
   }
 
   .register_form_placeholder_active_confirmpassword {
+    transform: translateY(10px) translateX(10px) !important;
+    transition: all 0.5s !important;
+  }
+
+  .register_form_placeholder_active_nombrefarmacia {
+    transform: translateY(10px) translateX(10px) !important;
+    transition: all 0.5s !important;
+  }
+
+  .register_form_placeholder_active_razonsocial {
+    transform: translateY(10px) translateX(10px) !important;
+    transition: all 0.5s !important;
+  }
+
+  .register_form_placeholder_active_nombreapellidocontacto {
+    transform: translateY(10px) translateX(10px) !important;
+    transition: all 0.5s !important;
+  }
+
+  .register_form_placeholder_active_telefonocontacto {
+    transform: translateY(10px) translateX(10px) !important;
+    transition: all 0.5s !important;
+  }
+
+  .register_form_placeholder_active_whatsappcontacto {
+    transform: translateY(10px) translateX(10px) !important;
+    transition: all 0.5s !important;
+  }
+
+  .register_form_placeholder_active_direccion {
+    transform: translateY(10px) translateX(10px) !important;
+    transition: all 0.5s !important;
+  }
+
+  .register_form_placeholder_active_provincia {
+    transform: translateY(10px) translateX(10px) !important;
+    transition: all 0.5s !important;
+  }
+
+  .register_form_placeholder_active_ciudad {
     transform: translateY(10px) translateX(10px) !important;
     transition: all 0.5s !important;
   }
