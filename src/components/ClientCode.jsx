@@ -86,6 +86,10 @@ const ClientCode = () => {
         history.push("/");
     }
 
+    const onClickNoCode = () => {
+        history.push("/register");
+    }
+
 
     return(
         <section className="register">
@@ -106,6 +110,7 @@ const ClientCode = () => {
                        onChange={(e) => onChange(e)}/>
                 <input type="submit" value="Verificar Código" className="register_form_submit"/>
             </form>
+            <input type="submit" value="Registrar sin código" className="register_form_submit" onClick={onClickNoCode}/>
             <input type="submit" value="Volver a inicio" className="register_form_submit" onClick={onClick}/>
         </section>
     )
