@@ -19,8 +19,9 @@ const CartCheckout = () => {
         const formData = new FormData();
         formData.append("cart",JSON.stringify(cart));
         console.log("Console log de carrito: ", cart);
-        formData.append("idCuenta",user["id"]);
+        formData.append("idCuenta",user["idCuenta"]);
         formData.append("descuento",user["descuento"]);
+        formData.append("nombreFarmacia", user["datos"]["nombreFarmacia"]);
         console.log("Console log de formData: ",formData);
         clearCart();
         axios

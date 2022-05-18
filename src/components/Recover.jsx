@@ -2,7 +2,8 @@ import Logo from "../media/logo.png";
 import {BiKey, BiUser} from "react-icons/bi";
 import {Link} from "react-router-dom";
 import {useRef, useState} from "react";
-
+import axios from "axios";
+import {toast} from "react-toastify";
 
 const Recover = () => {
 
@@ -14,7 +15,6 @@ const Recover = () => {
 
     const [inputs,setInputs] = useState({
         email: "",
-        password: ""
     })
 
 
@@ -46,7 +46,16 @@ const Recover = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(...inputs);
+        const formData = new FormData();
+        formData.append("email",inputs["email"]);
+        axios
+            .post("php/recuperar_contrasena.php",formData)
+            .then((res) => {
+                toast.success("Se ha enviado un email!");
+            })
+            .catch((error) => {
+                toast.error("Hubo un error mandando el mail!");
+            })
     }
 
 
@@ -63,7 +72,7 @@ const Recover = () => {
                 <input type="email" autoComplete="off" className="recover_form_input" name="email" id="email" onChange={(e) => onChange(e)}/>
                 <input type="submit" value="Recuperar Cuenta" className="recover_form_submit"/>
                 <span className="register_form_link">¿Ya tienes una cuenta?<Link to="/"><a>Inicia Sesión</a></Link></span>
-                <span className="recover_form_link">¿No tenés una cuenta?<Link to="/register">Registrate Ahora</Link></span>
+                <span className="recover_form_link">¿No tenés una cuenta?<Link to="/registercode">Registrate Ahora</Link></span>
             </form>
         </section>
     )

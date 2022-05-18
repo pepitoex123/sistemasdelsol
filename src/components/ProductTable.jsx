@@ -41,7 +41,7 @@ const ProductTable = ({input}) => {
                 setNumberPages(Number(itemsArray[0]));
                 setProductsToFetch(itemsArray[1]);
             }}
-        var cadenaParametros = `Search=${encodeURIComponent(input.search)}&Filter=${encodeURIComponent(input.filter)}&SelectedPage=${encodeURIComponent(pagination.selectedPage)}`;
+        var cadenaParametros = `Search=${encodeURIComponent(input.search)}&Filter=${encodeURIComponent(input.filter)}&SelectedPage=${encodeURIComponent(pagination.selectedPage)}&idCuenta=${encodeURIComponent(user.idCuenta)}`;
         xmlhttp1.open('POST', '../php/buscar_items.php',true);
         xmlhttp1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xmlhttp1.send(cadenaParametros);
@@ -82,9 +82,9 @@ const ProductTable = ({input}) => {
                     <tbody>
                     {
                         productsToFetch ? ( input.search ? productsToFetch.filter((product) => product[sanitizedInput].toLowerCase().includes(input.search.toLowerCase())).map((product) => (
-                            <ProductCell key={product.id} {...product} />
+                            <ProductCell key={product.id} descuentoLista={product.descuentoLista} {...product} />
                         )) : productsToFetch.map((product) => (
-                            <ProductCell key={product.id} {...product} />
+                            <ProductCell key={product.id} descuentoLista={product.descuentoLista} {...product} />
                         )) ) : ""
                     }
                     </tbody>

@@ -9,11 +9,14 @@ import {CartContext} from "../contexts/CartContext";
 import { Link } from "react-router-dom";
 import {UserContext} from "../contexts/UserContext";
 
-const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,precio,priceDiscount,dto,precioConDescuento,image,coberturaPami,id}) => {
+const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,precio,priceDiscount,dto,precioConDescuento,image,coberturaPami,id,descuentoLista}) => {
 
     const [isHovering,setIsHovering] = useState(false);
 
     const {addProductToCart,cart} = useContext(CartContext);
+
+
+    console.log("Esto es un descuento!!!", descuentoLista);
 
 
     const {user} = useContext(UserContext);
@@ -57,7 +60,8 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,precio,priceDi
             precioConDescuento,
             image,
             coberturaPami,
-            id
+            id,
+            descuentoLista
         }, (0 + Number(event.target.value)))
 
 
@@ -106,9 +110,9 @@ const ProductCell = ({nombreComercial,laboratorio,monodroga,stock,precio,priceDi
 
                 */}
 
-                <td data-title="Su Descuento" data-type="currency">{user["datos"]["descuento"]}</td>
+                <td data-title="Su Descuento" data-type="currency">{descuentoLista}</td>
                 <td data-title="Precio" data-type="currency">${precio}</td>
-                <td data-title="Precio Con Descuento" data-type="currency">${Number(user["datos"]["descuento"]) === 0 ?  precio : (((100 - Number(user["datos"]["descuento"])) * Number(precio)) / 100)}</td>
+                <td data-title="Precio Con Descuento" data-type="currency">${Number(descuentoLista) === 0 ?  precio : (((100 - Number(descuentoLista)) * Number(precio)) / 100)}</td>
             </tr>
         </>
     )

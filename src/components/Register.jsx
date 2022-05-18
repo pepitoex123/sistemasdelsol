@@ -176,6 +176,7 @@ const Register = () => {
         formData.append("direccion",inputs["direccion"]);
         formData.append("provincia",inputs["provincia"]);
         formData.append("ciudad",inputs["ciudad"]);
+        formData.append("idCuenta", user["idCuenta"]);
         axios
             .post("php/guardar_usuario.php",formData)
             .then((res) => {

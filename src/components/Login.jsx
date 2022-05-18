@@ -97,7 +97,7 @@ const Login = () => {
                 <input type="password" className="login_form_input" name="password" id="password" onChange={(e) => onChange(e) } autoComplete="off"/>
                 <input type="submit" value="Iniciar Sesión" className="login_form_submit"/>
                 <span className="login_form_link">¿Olvidaste tu contraseña?<Link to="/recover">Hacé click acá</Link></span>
-                <span className="login_form_link">¿No tenés una cuenta?<Link to="/register">Registrate Ahora</Link></span>
+                <span className="login_form_link">¿No tenés una cuenta?<Link to="/registercode">Registrate Ahora</Link></span>
             </form>
         </section>
     )
